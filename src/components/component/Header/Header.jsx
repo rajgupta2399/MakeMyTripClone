@@ -40,10 +40,38 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined") {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 120 && currentScrollY < 150) {
+          setHeaderVisible(false); // Hide header when scrolling down
+        } else if (currentScrollY >= 150) {
+          setHeaderVisible(false); // Completely hide header
+        } else {
+          setHeaderVisible(true); // Show header when scrolling up or less than 120px
+        }
+
+        // Show header when scrolling up
+        if (currentScrollY < lastScrollY) {
+          setHeaderVisible(true);
+        }
+
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   if (!mounted) return null;
 
@@ -54,10 +82,12 @@ export default function Header() {
   return (
     <header
       className={`${
+        headerVisible ? "translate-y-0" : "-translate-y-full"
+      } transition-transform duration-300 ${
         theme === "light"
           ? "bg-white text-[#1D232A]"
           : "bg-[#1D232A] text-white"
-      }  shadow-lg px-5`}
+      } shadow-lg px-5 fixed top-0 left-0 right-0 z-50`}
     >
       <nav
         aria-label="Global"
