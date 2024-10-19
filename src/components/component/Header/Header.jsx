@@ -87,7 +87,7 @@ export default function Header() {
         theme === "light"
           ? "bg-white text-[#1D232A]"
           : "bg-[#1D232A] text-white"
-      } shadow-lg px-5 fixed top-0 left-0 right-0 z-50`}
+      } shadow-lg sm:px-5 fixed top-0 left-0 right-0 z-50`}
     >
       <nav
         aria-label="Global"

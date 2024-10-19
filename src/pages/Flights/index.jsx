@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>Flight page</div>
+    <div className=' text-white'>Flight page</div>
   )
 }
 
