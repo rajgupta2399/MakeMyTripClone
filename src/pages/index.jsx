@@ -7,6 +7,7 @@ import Banner from "@/components/component/Banner/Banner";
 import AdvanceSearch from "@/components/component/AdvanceSearch/AdvanceSearch";
 import ContentSwitcher from "@/components/component/AdvanceSearch/ContentSwitcher";
 import { TabsDemo } from "@/components/component/AdvanceSearch/Tabs";
+import FlightLanding from "@/components/component/AdvanceSearch/FlightLanding/FlightLanding";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -27,7 +28,8 @@ export default function Home() {
         <TabsDemo />
         {/* <AdvanceSearch /> */}
         {/* <ContentSwitcher /> */}
-        <ThreeDCardDemo />
+        {/* <ThreeDCardDemo /> */}
+        <FlightLanding />
       </div>
     </>
   );

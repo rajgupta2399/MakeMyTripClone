@@ -8,6 +8,10 @@ import TrainImage from "../../../../public/Assets/train2.png";
 import HomeImage from "../../../../public/Assets/homestay.png";
 import BeachImage from "../../../../public/Assets/beach.png";
 import AdvanceSearchFlight from "./AdvanceSearchFlight";
+import AdvanceSearchHotel from "./AdvanceSearchHotel";
+import AdvanceSearchHome from "./AdvanceSearchHome";
+import AdvanceSearchDest from "./AdvanceSearchDest";
+import AdvanceSearchTrain from "./AdvanceSearchTrain";
 
 export function TabsDemo() {
   const tabs = [
@@ -25,7 +29,7 @@ export function TabsDemo() {
       value: "services",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
-          <AdvanceSearchFlight />
+          <AdvanceSearchHotel />
         </div>
       ),
     },
@@ -34,7 +38,7 @@ export function TabsDemo() {
       value: "playground",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
-          <AdvanceSearchFlight />
+          <AdvanceSearchHome />
         </div>
       ),
     },
@@ -43,7 +47,7 @@ export function TabsDemo() {
       value: "content",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
-          <AdvanceSearchFlight />
+          <AdvanceSearchDest />
         </div>
       ),
     },
@@ -52,7 +56,7 @@ export function TabsDemo() {
       value: "random",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
-          <AdvanceSearchFlight />
+          <AdvanceSearchTrain />
         </div>
       ),
     },

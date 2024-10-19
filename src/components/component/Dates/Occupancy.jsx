@@ -1,8 +1,12 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
+
 
 const Occupancy = () => {
+  const { theme } = useTheme();
+
   const [openOptions, setOpenOptions] = useState(true);
   const [options, setOptions] = useState({
     adult: 2,
@@ -23,7 +27,13 @@ const Occupancy = () => {
     <div className="flex justify-center ">
       <div className="relative w-full rounded-lg">
         {openOptions && (
-          <div className="options py-3 px-10 bg-white rounded-lg shadow-inner text-black">
+          <div
+            className={`options py-3 px-10 rounded-lg shadow-md ${
+              theme === "light"
+                ? "bg-white text-[#1D232A] bg-gradient-to-br from-purple-700 to-violet-900"
+                : "bg-[#30373e] text-white bg-gradient-to-br from-gray-700 to-gray-900"
+            }`}
+          >
             {/* Adult Option */}
             <div className="optionItem flex justify-between items-center mb-4">
               <span className="optionText text-lg font-semibold pr-10">
