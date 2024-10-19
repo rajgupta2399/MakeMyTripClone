@@ -1,11 +1,13 @@
 // pages/index.js
-import Head from 'next/head';
-import { Montserrat } from 'next/font/google'; // Import Montserrat font
-import styles from '@/styles/Home.module.css';
+import Head from "next/head";
+import { Montserrat } from "next/font/google"; // Import Montserrat font
+import styles from "@/styles/Home.module.css";
+import { ThreeDCardDemo } from "@/components/component/Other/ThreeDCardDemo";
+import Banner from "@/components/component/Banner/Banner";
 
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-mont', // Custom CSS variable for the font
+  subsets: ["latin"],
+  variable: "--font-mont", // Custom CSS variable for the font
 });
 
 export default function Home() {
@@ -19,7 +21,8 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${montserrat.variable}`}>
         <div>
-          <h1 className='text-dark'>Next.js</h1>
+          <Banner />
+          <ThreeDCardDemo />
         </div>
       </main>
     </>

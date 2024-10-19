@@ -5,6 +5,7 @@ import Header from '@/components/component/Header/Header';
 import ThemeSwitcher from '@/components/component/Header/ThemeSwitcher';
 import ThemeProvide from "@/components/component/Header/ThemeProvide"
 import Head from "next/head";
+import '@/styles/globals.css'; 
 import Layout from '@/components/component/Layout/Layout';
 
 export const metadata = {
