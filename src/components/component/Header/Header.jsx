@@ -297,7 +297,7 @@ export default function Header() {
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   <Image src={HomeImage} width={32} height={32} />
-                  TRAINS
+                  HOMESTAYS
                 </Link>
 
                 <Link
