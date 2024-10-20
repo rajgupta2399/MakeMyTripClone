@@ -154,6 +154,20 @@ export default function Header() {
                  */}
             HOTELS
           </Link>
+
+          <Link
+            href={"/Destination/"}
+            className={`${
+              theme === "light" ? "#1D232A" : "text-white"
+            } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
+          >
+            {/**
+                <Image src={HotelImage} width={32} height={32} />
+                 */}
+            HOLIDAYS
+          </Link>
+
+
           <a
             href="#"
             className={`text-sm font-semibold leading-6 ${
