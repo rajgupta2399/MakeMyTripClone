@@ -4,7 +4,6 @@ import { useTheme } from "next-themes";
 import { CheckInDate } from "../Dates/CheckInDate";
 import { CheckOutDate } from "../Dates/CheckOutDate";
 import Occupancy from "../Dates/Occupancy";
-import ContentSwitcher from "./ContentSwitcher";
 import { Location } from "../Dates/Location";
 
 const AdvanceSearchHotel = () => {

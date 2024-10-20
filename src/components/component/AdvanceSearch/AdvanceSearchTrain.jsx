@@ -63,7 +63,7 @@ const AdvanceSearchTrain = () => {
             >
               Location
             </label>
-            <Location />
+            {/* <Location /> */}
           </div>
 
           <div className=" flex justify-center items-center">
