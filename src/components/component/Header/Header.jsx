@@ -35,6 +35,7 @@ import PlaneImage from "../../../../public/Assets/plane.png";
 import HotelImage from "../../../../public/Assets/hotel.png";
 import TrainImage from "../../../../public/Assets/train2.png";
 import HomeImage from "../../../../public/Assets/homestay.png";
+import HolidayImage from "../../../../public/Assets/beach.png";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -167,7 +168,6 @@ export default function Header() {
             HOLIDAYS
           </Link>
 
-
           <a
             href="#"
             className={`text-sm font-semibold leading-6 ${
@@ -298,6 +298,18 @@ export default function Header() {
                 >
                   <Image src={HomeImage} width={32} height={32} />
                   TRAINS
+                </Link>
+
+                <Link
+                  href={"/Destination/"}
+                  className={`${
+                    theme === "light"
+                      ? "bg-white text-[#1D232A]"
+                      : "bg-[#1D232A] text-white"
+                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
+                >
+                  <Image src={HolidayImage} width={32} height={32} />
+                  HOLIDAYS
                 </Link>
               </div>
               <div className="flex justify-between align-middle items-center">
