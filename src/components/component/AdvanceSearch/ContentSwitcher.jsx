@@ -5,8 +5,6 @@ import PlaneImage from "../../../../public/Assets/plane.png";
 import HotelImage from "../../../../public/Assets/hotel.png";
 import TrainImage from "../../../../public/Assets/train2.png";
 import HomeImage from "../../../../public/Assets/homestay.png";
-import AdvanceSearch from "./AdvanceSearch"; // Import AdvanceSearch
-import AdvanceSearchFlight from "./AdvanceSearchFlight";
 
 const ContentSwitcher = () => {
   const [selectedContent, setSelectedContent] = useState("hotels");
