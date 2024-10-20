@@ -91,7 +91,7 @@ export default function Header() {
     >
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 py-3"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 py-2.5"
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -100,7 +100,7 @@ export default function Header() {
               <img
                 alt=""
                 src="https://pngimagesfree.com/wp-content/uploads/Make-My-Trip-Logo-PNG@.png"
-                className=" h-10 w-auto"
+                className=" h-8 w-auto"
               />
             </Link>
           </a>
@@ -126,7 +126,7 @@ export default function Header() {
             >
               <Link
                 href={"/Flights/"}
-                className=" flex flex-col justify-center items-center gap-2 text-[16px] font-semibold"
+                className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
               >
                 {/**
                   <Image src={PlaneImage} width={32} height={32} />
@@ -147,7 +147,7 @@ export default function Header() {
             href={"/Hotels/"}
             className={`${
               theme === "light" ? "#1D232A" : "text-white"
-            } flex flex-col justify-center items-center gap-2 text-[16px] leading-6 font-semibold`}
+            } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
           >
             {/**
                 <Image src={HotelImage} width={32} height={32} />
@@ -162,7 +162,7 @@ export default function Header() {
           >
             <Link
               href={"/Trains/"}
-              className=" flex flex-col justify-center items-center gap-2 text-[16px] font-semibold"
+              className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
             >
               {/**
                 <Image src={TrainImage} width={32} height={32} />
@@ -178,7 +178,7 @@ export default function Header() {
           >
             <Link
               href={"/Homestays/"}
-              className=" flex flex-col justify-center items-center gap-2 text-[16px] font-semibold"
+              className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
             >
               {/**
                 <Image src={HomeImage} width={32} height={32} />
