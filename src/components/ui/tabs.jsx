@@ -26,9 +26,9 @@ export const Tabs = ({
   return (<>
     <div
       className={cn(
-        "flex flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full sm:w-[60%] py-3 px-3 mx-3 rounded-xl bg-white",
+        "flex flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full sm:w-[60%] py-2 md:py-2 lg:!py-4 xl:py-4 px-3 mx-2 rounded-xl bg-white",
         containerClassName
-      )}>
+      )}> 
       {propTabs.map((tab, idx) => (
         <button
           key={tab.title}
@@ -37,7 +37,7 @@ export const Tabs = ({
           }}
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
-          className={cn("relative px-4 py-2 rounded-full", tabClassName)}
+          className={cn("relative px-4 sm:py-4 py-4 rounded-full", tabClassName)}
           style={{
             transformStyle: "preserve-3d",
           }}>

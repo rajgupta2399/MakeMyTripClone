@@ -16,16 +16,26 @@ import AdvanceSearchTrain from "./AdvanceSearchTrain";
 export function TabsDemo() {
   const tabs = [
     {
-      title: <Image src={PlaneImage} width={28} height={28}></Image>,
+      title: (
+        <Image
+          src={PlaneImage}
+          className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+        ></Image>
+      ),
       value: "Flights",
       content: (
-        <div className="overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
+        <div className="overflow-hidden relative mb-0 rounded-2xl p-1 0 text-xl md:text-4xl font-bold text-white">
           <AdvanceSearchFlight />
         </div>
       ),
     },
     {
-      title: <Image src={HotelImage} width={28} height={28}></Image>,
+      title: (
+        <Image
+          src={HotelImage}
+          className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+        ></Image>
+      ),
       value: "services",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
@@ -34,7 +44,12 @@ export function TabsDemo() {
       ),
     },
     {
-      title: <Image src={HomeImage} width={28} height={28}></Image>,
+      title: (
+        <Image
+          src={HomeImage}
+          className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+        ></Image>
+      ),
       value: "playground",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
@@ -43,7 +58,12 @@ export function TabsDemo() {
       ),
     },
     {
-      title: <Image src={BeachImage} width={28} height={28}></Image>,
+      title: (
+        <Image
+          src={BeachImage}
+          className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+        ></Image>
+      ),
       value: "content",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
@@ -52,7 +72,12 @@ export function TabsDemo() {
       ),
     },
     {
-      title: <Image src={TrainImage} width={28} height={28}></Image>,
+      title: (
+        <Image
+          src={TrainImage}
+          className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+        ></Image>
+      ),
       value: "random",
       content: (
         <div className="w-full overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
@@ -76,7 +101,7 @@ export function TabsDemo() {
 //       alt="dummy image"
 //       width="1000"
 //       height="1000"
-//       className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto mt-0"
+//       className="object-cover object-left-top h-[60%]  md:h-[120%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto mt-0"
 //     />
 //   );
 // };

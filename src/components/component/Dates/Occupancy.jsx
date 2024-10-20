@@ -35,8 +35,8 @@ const Occupancy = () => {
             }`}
           >
             {/* Adult Option */}
-            <div className="optionItem flex justify-between items-center mb-4">
-              <span className="optionText text-lg font-semibold pr-10">
+            <div className="optionItem flex justify-center items-center mb-4">
+              <span className="optionText text-lg font-semibold sm:pr-10 pr-3 block">
                 Adults
               </span>
               <div className="optionCounter flex items-center">
@@ -60,8 +60,8 @@ const Occupancy = () => {
             </div>
 
             {/* Children Option */}
-            <div className="optionItem flex justify-between items-center">
-              <span className="optionText text-lg font-semibold pr-10">
+            <div className="optionItem flex justify-center items-center">
+              <span className="optionText text-lg font-semibold sm:pr-10 pr-3">
                 Children
               </span>
               <div className="optionCounter flex items-center">

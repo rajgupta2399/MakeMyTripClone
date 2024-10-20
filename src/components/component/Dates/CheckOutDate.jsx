@@ -22,7 +22,7 @@ export function CheckOutDate() {
         <Button
           variant="outline"
           className={cn(
-            "w-[280px] justify-start text-left font-normal",
+            "sm:w-[280px] justify-start text-left font-normal w-full mt-1",
             !date && "text-muted-foreground"
           )}
         >

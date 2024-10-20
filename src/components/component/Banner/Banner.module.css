@@ -91,7 +91,7 @@
   }
   .carousel {
     /* border: 2px solid red; */
-    height: 60vh;
+    height: 42vh;
   }
 
   .slider .carousel::after {
@@ -112,7 +112,7 @@
   .carouselCaption {
     right: 3%;
     left: 3%;
-    bottom: 22%;
+    bottom: 30%;
     padding: 0 0 20px 0;
     z-index: 9;
   }
