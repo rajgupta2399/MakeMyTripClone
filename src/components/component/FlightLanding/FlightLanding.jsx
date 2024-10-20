@@ -1,9 +1,9 @@
 import React from "react";
-import bestBookingImage from "../../../../../public/Assets/best-booking.png";
-import PlaneImage from "../../../../../public/Assets/flight.png";
+import bestBookingImage from "../../../../public/Assets/best-booking.png";
+import PlaneImage from "../../../../public/Assets/flight.png";
 import Image from "next/image";
-import Layout from "../../Layout/Layout";
-import { GlobeDemo } from "../../Animation/Globe";
+import Layout from "../Layout/Layout";
+import { AppleCardsCarouselDemo } from "./AppleCardsCarouselDemo";
 
 const FlightLanding = () => {
   return (
@@ -24,7 +24,8 @@ const FlightLanding = () => {
               Kickstart Your Travel Journey
             </h1>
           </div>
-          <GlobeDemo />
+          {/* <GlobeDemo /> */}
+          <AppleCardsCarouselDemo />
         </Layout>
       </div>
     </>
