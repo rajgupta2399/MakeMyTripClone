@@ -15,12 +15,9 @@ const FlightLanding = () => {
               <Image src={bestBookingImage} />
               <span>Best Flight Booking System</span>
             </div>
-            <div className="Image block">
-              <Image src={PlaneImage} />
-            </div>
           </div>
           <div className="heading">
-            <h1 className=" text-5xl font-semibold capitalize">
+            <h1 className=" text-5xl font-semibold capitalize mt-3">
               Kickstart Your Travel Journey
             </h1>
           </div>
