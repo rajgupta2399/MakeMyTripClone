@@ -10,14 +10,14 @@ const FlightLanding = () => {
     <>
       <div>
         <Layout>
-          <div className="flex flex-row justify-between items-center mb-2">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-2 sm:mt-0 mt-[33rem]">
             <div className="flex gap-2 border-2 justify-center align-middle border-yellow-400 w-[300px] py-2.5 rounded-full">
               <Image src={bestBookingImage} />
               <span>Best Flight Booking System</span>
             </div>
           </div>
-          <div className="heading">
-            <h1 className=" text-5xl font-semibold capitalize mt-3">
+          <div className="heading w-full">
+            <h1 className=" sm:text-5xl text-2xl font-semibold capitalize mt-3 w-full text-center">
               Kickstart Your Travel Journey
             </h1>
           </div>

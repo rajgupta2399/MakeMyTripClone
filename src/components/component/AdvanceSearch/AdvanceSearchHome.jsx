@@ -13,7 +13,7 @@ const AdvanceSearchHome = () => {
   return (
     <>
       <div
-        className={`rounded-lg sm:relative w-[calc(100% - 40px)] ml-0 sm:h-[235px] h-[450px] mb-0 p-4 flex flex-col
+        className={`rounded-lg sm:relative w-[calc(100% - 40px)] ml-0 sm:h-[235px] h-[520px] mb-0 p-4 flex flex-col
 sm:flex-row sm:gap-4 items-center justify-center ${
           theme === "light"
             ? "bg-white text-[#1D232A] bg-gradient-to-br from-purple-700 to-violet-900"
@@ -64,7 +64,7 @@ sm:flex-row sm:gap-4 items-center justify-center ${
             >
               Location
             </label>
-            {/* <Location /> */}
+            <Location />
           </div>
 
           <div className=" flex justify-center items-center">

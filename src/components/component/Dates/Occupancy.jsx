@@ -42,7 +42,7 @@ const Occupancy = () => {
               <div className="optionCounter flex items-center">
                 <button
                   disabled={options.adult <= 2}
-                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-l-lg px-2 py-1"
+                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-full px-2 py-0"
                   onClick={() => handleOption("adult", "d")}
                 >
                   -
@@ -51,7 +51,7 @@ const Occupancy = () => {
                   {options.adult}
                 </span>
                 <button
-                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-r-lg px-2 py-1"
+                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-full px-2 py-0"
                   onClick={() => handleOption("adult", "i")}
                 >
                   +
@@ -67,7 +67,7 @@ const Occupancy = () => {
               <div className="optionCounter flex items-center">
                 <button
                   disabled={options.children <= 0}
-                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-l-lg px-2 py-1"
+                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-full px-2 py-0"
                   onClick={() => handleOption("children", "d")}
                 >
                   -
@@ -76,7 +76,7 @@ const Occupancy = () => {
                   {options.children}
                 </span>
                 <button
-                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-r-lg px-2 py-1"
+                  className="optionCounterButton bg-gray-300 hover:bg-gray-400 text-lg font-bold text-gray-700 rounded-full px-2 py-0"
                   onClick={() => handleOption("children", "i")}
                 >
                   +

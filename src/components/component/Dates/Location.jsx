@@ -47,7 +47,7 @@ export function Location() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="sm:w-[200px] justify-between w-full"
         >
           {value
             ? countryCode.find((country) => country.code === value)?.name

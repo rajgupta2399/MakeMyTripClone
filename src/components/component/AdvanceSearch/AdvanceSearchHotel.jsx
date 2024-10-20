@@ -12,7 +12,7 @@ const AdvanceSearchHotel = () => {
   return (
     <>
       <div
-        className={`rounded-lg sm:relative w-[calc(100% - 40px)] ml-0 sm:h-[235px] h-[450px] mb-0 p-4 flex flex-col sm:flex-row sm:gap-4 items-center justify-center ${
+        className={`rounded-lg sm:relative w-[calc(100% - 40px)] ml-0 sm:h-[235px] h-[520px] sm:mb-0 p-4 flex flex-col gap-4 sm:flex-row sm:gap-4 sm:items-center sm:justify-center ${
           theme === "light"
             ? "bg-white text-[#1D232A] bg-gradient-to-br from-purple-700 to-violet-900"
             : "bg-[#30373e] text-white bg-gradient-to-br from-gray-800 to-gray-900"
