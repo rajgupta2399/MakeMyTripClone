@@ -31,7 +31,7 @@ const AdvanceSearchHotel = () => {
             <CheckInDate />
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 mb-1">
             <label
               className={`block text-sm font-medium mb-1 ${
                 theme === "light" ? "text-gray-700" : "text-gray-300"

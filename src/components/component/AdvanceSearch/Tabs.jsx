@@ -24,7 +24,7 @@ export function TabsDemo() {
       ),
       value: "Flights",
       content: (
-        <div className="overflow-hidden relative mb-0 rounded-2xl p-1 0 text-xl md:text-4xl font-bold text-white">
+        <div className="overflow-hidden relative mb-0 rounded-2xl p-10 text-xl md:text-4xl font-bold text-white">
           <AdvanceSearchFlight />
         </div>
       ),
