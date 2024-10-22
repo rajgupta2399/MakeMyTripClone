@@ -44,18 +44,17 @@ const DummyContent = () => {
   );
 };
 
-const DummyContent1 = () => {
+const DummyContent1 = ({ title, content, ImageSrc }) => {
   return (
     <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
       <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
         <span className="font-bold text-neutral-700 dark:text-neutral-200">
-
-          Introducing MakeMyTRP
+          {title}
         </span>{" "}
-        Your one-stop travel companion designed to simplify your journey planning. With our user-friendly interface, you can effortlessly book flights, hotel rooms, homestays, and railway tickets all in one place. Whether you’re planning a weekend getaway or an extended vacation, MakeMyTRP has you covered.
+        {content}
       </p>
       <Image
-        src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D"
+        src={ImageSrc}
         alt="Content image"
         height="300"
         width="500"
@@ -113,9 +112,10 @@ const data = [
     src: "https://images.unsplash.com/photo-1507608443039-bfde4fbcd142?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     content: (
       <>
-        <DummyContent1 />
-        <DummyContent2 />
-        <DummyContent3 />
+        <DummyContent1 title="Introducing MakeMyTRP" />
+        <DummyContent2 content="Your one-stop travel companion designed to simplify your journey planning. With our user-friendly interface, you can effortlessly book flights, hotel rooms, homestays, and railway tickets all in one place. Whether you’re planning a weekend getaway or an extended vacation, MakeMyTRP has you covered.
+"/>
+        <DummyContent3 ImageSrc="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D" />
       </>
     ),
   },
