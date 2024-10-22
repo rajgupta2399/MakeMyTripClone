@@ -178,9 +178,9 @@ const data = [
     src: "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHJhdmVsJTIwYmVhY2hlc3xlbnwwfHwwfHx8MA%3D%3D",
     content: (
       <>
-        <DummyContent1 components={components} />
-        <DummyContent2 components={components} />
-        <DummyContent3 components={components} />
+        <DummyContent1 components={components[0]} />
+        <DummyContent2 components={components[1]} />
+        <DummyContent3 components={components[2]} />
       </>
     ),
   },
@@ -190,9 +190,9 @@ const data = [
     src: "https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsJTIwaG90ZWxzfGVufDB8fDB8fHww",
     content: (
       <>
-        <DummyContent1 components={components} />
-        <DummyContent2 components={components} />
-        <DummyContent3 components={components} />
+        <DummyContent1 components={components[0]} />
+        <DummyContent2 components={components[1]} />
+        <DummyContent3 components={components[2]} />
       </>
     ),
   },
