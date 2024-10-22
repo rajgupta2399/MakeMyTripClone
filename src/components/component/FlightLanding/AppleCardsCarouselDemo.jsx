@@ -141,10 +141,10 @@ const data = [
     src: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D",
     content: (
       <>
-        <DummyContent1 components={components} />
-        <DummyContent2 components={components} />
-        <DummyContent3 components={components} />
-      </>
+      <DummyContent1 components={components[0]} />
+      <DummyContent2 components={components[1]} />
+      <DummyContent3 components={components[2]} />
+    </>
     ),
   },
   {
