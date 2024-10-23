@@ -14,7 +14,15 @@ import {
 } from "@/components/ui/popover";
 
 export function CheckInDate() {
-  const [date, setDate] = React.useState(null);
+  const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+  };
+  const [date, setDate] = React.useState(getCurrentDate());
 
   const handleDateSelect = (selectedDate) => {
     if (selectedDate) {
@@ -22,6 +30,9 @@ export function CheckInDate() {
       setDate(formattedDate);
     }
   };
+
+
+
 
   // console.log(date);
 

@@ -26,7 +26,7 @@ import { City } from "./City";
 export function Location() {
   const { countryData, setCountryData } = useContext(CountryContext)
   const [open, setOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState({ name: "", code: "" });
+  const [selectedCountry, setSelectedCountry] = useState({ name: "India", code: "IN" });
   const [countryCode, setCountryCode] = useState([]);
 
   const fetchCountryCode = async () => {

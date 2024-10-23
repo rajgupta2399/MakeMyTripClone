@@ -27,7 +27,7 @@ export function City() {
     const { hotelCityData, setHotelCityData } = useContext(HotelCityContext);
     const code = countryData.code;
     const [open, setOpen] = useState(false);
-    const [selectedCity, setSelectedCity] = useState({ city: "" }); // Use city instead of name
+    const [selectedCity, setSelectedCity] = useState({ city: "New Delhi" }); // Use city instead of name
     const [cityCode, setCityCode] = useState([]);
 
     // Fetch the cities using the selected country code
