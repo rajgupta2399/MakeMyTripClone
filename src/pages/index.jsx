@@ -4,11 +4,15 @@ import { Montserrat } from "next/font/google"; // Import Montserrat font
 import Banner from "@/components/component/Banner/Banner";
 import { TabsDemo } from "@/components/component/AdvanceSearch/Tabs";
 import FlightLanding from "@/components/component/FlightLanding/FlightLanding";
+import Header from "@/components/component/Header/Header";
+import HotelHeader from "./Hotels/components/Header/HotelHeader";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-mont", // Custom CSS variable for the font
 });
+
+
 
 export default function Home() {
   return (

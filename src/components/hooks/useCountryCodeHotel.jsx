@@ -16,7 +16,7 @@ const useCountryCodeHotel = () => {
         );
         const data = await res.json();
         dispatch(addCountryHotelCode(data.data));
-        console.log(data.data);
+        // console.log(data.data);
 
     };
 

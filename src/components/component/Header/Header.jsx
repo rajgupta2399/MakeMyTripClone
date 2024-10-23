@@ -88,7 +88,7 @@ export default function Header() {
         theme === "light"
           ? "bg-white text-[#1D232A]"
           : "bg-[#1D232A] text-white"
-      } shadow-lg sm:px-5 fixed top-0 left-0 right-0 z-50`}
+      } shadow-md sm:px-5 fixed top-0 left-0 right-0 z-50`}
     >
       <nav
         aria-label="Global"
@@ -118,7 +118,7 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        {/* <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton
               className={`flex items-center gap-x-1 text-sm font-semibold leading-6 ${
@@ -129,9 +129,7 @@ export default function Header() {
                 href={"/Flights/"}
                 className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
               >
-                {/**
-                  <Image src={PlaneImage} width={32} height={32} />
-                  */}
+              
                 FLIGHTS
               </Link>
             </PopoverButton>
@@ -140,7 +138,7 @@ export default function Header() {
                 theme === "light" ? "bg-white" : "bg-gray-800"
               }`}
             >
-              {/* Product panel */}
+              
             </PopoverPanel>
           </Popover>
 
@@ -150,9 +148,7 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
           >
-            {/**
-                <Image src={HotelImage} width={32} height={32} />
-                 */}
+           
             HOTELS
           </Link>
 
@@ -162,9 +158,7 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
           >
-            {/**
-                <Image src={HotelImage} width={32} height={32} />
-                 */}
+            
             HOLIDAYS
           </Link>
 
@@ -178,9 +172,7 @@ export default function Header() {
               href={"/Trains/"}
               className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
             >
-              {/**
-                <Image src={TrainImage} width={32} height={32} />
-                 */}
+             
               TRAINS
             </Link>
           </a>
@@ -194,13 +186,11 @@ export default function Header() {
               href={"/Homestays/"}
               className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
             >
-              {/**
-                <Image src={HomeImage} width={32} height={32} />
-                 */}
+              
               HOMESTAYS
             </Link>
           </a>
-        </PopoverGroup>
+        </PopoverGroup> */}
 
         {/* Theme Switcher Icon */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">

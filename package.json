@@ -24,6 +24,8 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
+    "embla-carousel-autoplay": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "flowbite-react": "^0.10.2",

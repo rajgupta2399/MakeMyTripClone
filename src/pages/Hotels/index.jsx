@@ -1,17 +1,17 @@
 import TransitionEffect from "@/components/component/Animation/TransitionEffect ";
 import { BackgroundLinesDemo } from "@/components/component/Footer/BackgroundLinesDemo";
-import { ThreeDCardDemo } from "@/components/component/Other/ThreeDCardDemo";
 import Head from "next/head";
 import React, { useContext } from "react";
 import { CountryContext } from "@/components/context/CountryContext";
+import { useSelector } from "react-redux";
 import useCountryCodeHotel from "@/components/hooks/useCountryCodeHotel";
+import HotelChainCarousel from "./components/HotelCarousel/HotelChainCarousel";
 
 const Page = () => {
   useCountryCodeHotel()
   const { countryData, setCountryData } = useContext(CountryContext)
-
-  // console.log(countryData.code);
-
+  const country = useSelector((store) => store.country.CountryHotelCode)
+  // console.log(country);
   return (
     <>
       <Head>
@@ -20,7 +20,9 @@ const Page = () => {
       </Head>
       <TransitionEffect />
       <div>
-        <BackgroundLinesDemo />
+        <div className=" sm:px-20 sm:mt-28">
+          <HotelChainCarousel />
+        </div>
       </div>
     </>
 

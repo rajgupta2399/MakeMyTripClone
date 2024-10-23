@@ -8,6 +8,7 @@ const countryHotelSlice = createSlice({
     reducers: {
         addCountryHotelCode: (state, action) => {
             state.CountryHotelCode = action.payload;
+            // console.log(action.payload);
         },
     },
 });

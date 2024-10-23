@@ -12,6 +12,8 @@ import { BackgroundBeamsWithCollisionDemo } from "@/components/component/Footer/
 import { CountryProvider } from "@/components/context/CountryContext";
 import { Provider } from "react-redux";
 import store from "@/store/store";
+import { useRouter } from "next/router";
+import HotelHeader from "./Hotels/components/Header/HotelHeader";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -24,6 +26,20 @@ const montserrat = Montserrat({
 });
 
 export default function App({ Component, pageProps }) {
+
+  const router = useRouter();
+  let header;
+  switch (router.pathname) {
+    case '/':
+      header = <Header />;
+      break;
+    case '/Hotels':
+      header = <HotelHeader />;
+      break;
+    default:
+      header = <Header />;
+  }
+
   return (
     <>
       <Head>
@@ -34,12 +50,12 @@ export default function App({ Component, pageProps }) {
         <ToastProvider>
           <ThemeProvide>
             <Provider store={store}>
-              <Header />
-              <ThemeSwitcher />
               <CountryProvider>
+                {header}
+                <ThemeSwitcher />
                 <Component {...pageProps} />
+                <BackgroundBeamsWithCollisionDemo />
               </CountryProvider>
-              <BackgroundBeamsWithCollisionDemo />
             </Provider>
           </ThemeProvide>
         </ToastProvider>
