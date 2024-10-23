@@ -4,7 +4,6 @@ import { useTheme } from "next-themes";
 import { CheckInDate } from "../Dates/CheckInDate";
 import { CheckOutDate } from "../Dates/CheckOutDate";
 import Occupancy from "../Dates/Occupancy";
-import ContentSwitcher from "./ContentSwitcher";
 import { Location } from "../Dates/Location";
 
 const AdvanceSearchHome = () => {
@@ -13,7 +12,7 @@ const AdvanceSearchHome = () => {
   return (
     <>
       <div
-        className={`rounded-lg sm:relative w-[calc(100% - 40px)] ml-0 sm:h-[235px] h-[520px] mb-0 p-4 flex flex-col
+        className={`rounded-lg sm:relative w-[calc(100% - 40px)] ml-0 sm:h-[280px] h-[520px] mb-0 p-4 flex flex-col
 sm:flex-row sm:gap-4 items-center justify-center ${
           theme === "light"
             ? "bg-white text-[#1D232A] bg-gradient-to-br from-purple-700 to-violet-900"
