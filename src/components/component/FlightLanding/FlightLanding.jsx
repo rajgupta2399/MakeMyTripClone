@@ -10,7 +10,7 @@ const FlightLanding = () => {
     <>
       <div>
         <Layout>
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-2 sm:mt-0 mt-[33rem]">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-2 sm:mt-10 mt-[33rem]">
             <div className="flex gap-2 border-2 justify-center align-middle border-yellow-400 w-[300px] py-2.5 rounded-full">
               <Image src={bestBookingImage} />
               <span>Best Flight Booking System</span>
