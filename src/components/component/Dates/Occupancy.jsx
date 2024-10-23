@@ -36,7 +36,7 @@ const Occupancy = () => {
           >
             {/* Adult Option */}
             <div className="optionItem flex justify-center items-center mb-4">
-              <span className="optionText text-lg font-semibold sm:pr-10 pr-3 block">
+              <span className="optionText text-lg font-semibold sm:pr-14 pr-3 block">
                 Adults
               </span>
               <div className="optionCounter flex items-center">

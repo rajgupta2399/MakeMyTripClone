@@ -24,4 +24,3 @@ This is a clone of the **MakeMyTrip** app built using the **Next.js** framework.
 - ✨ [Accertinity UI](https://ui.aceternity.com/)
 - 🖌️ [React Bootstrap](https://react-bootstrap.netlify.app/)
 - 💡 [MDBootstrap UI](https://mdbootstrap.com/docs/react//)
-- 

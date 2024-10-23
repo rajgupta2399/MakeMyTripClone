@@ -14,7 +14,8 @@ import {
 } from "@/components/ui/popover";
 
 export function CheckInDate() {
-  const [date, setDate] = React.useState(null); // Initialize date as null
+  const [date, setDate] = React.useState(null);
+
 
   return (
     <Popover>

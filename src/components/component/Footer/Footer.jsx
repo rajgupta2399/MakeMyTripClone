@@ -7,16 +7,17 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+
 
 export default function Footer() {
   const { theme } = useTheme();
   return (
     <MDBFooter
-      className={`text-center text-lg-start ${
-        theme === "light"
-          ? "bg-white text-[#1D232A]"
-          : "bg-[#1D232A] text-white"
-      }`}
+      className={`text-center text-lg-start ${theme === "light"
+        ? "bg-white text-[#1D232A]"
+        : "bg-[#1D232A] text-white"
+        }`}
     >
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
@@ -24,9 +25,14 @@ export default function Footer() {
         </div>
 
         <div>
-          <a href="" className="me-4 text-reset">
+          <motion.a href="" className="me-4 text-reset" target={"_blank"}
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <MDBIcon fab icon="facebook-f" />
-          </a>
+          </motion.a>
+
+          
           <a href="" className="me-4 text-reset">
             <MDBIcon fab icon="twitter" />
           </a>
@@ -133,9 +139,9 @@ export default function Footer() {
         className="text-center p-4"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
-        © 2021 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-          MDBootstrap.com
+        Made with ❤️ by {" "}
+        <a className="text-reset fw-bold" href="https://rajkumar2499.netlify.app/" target="_blank">
+          RajKumar
         </a>
       </div>
     </MDBFooter>
