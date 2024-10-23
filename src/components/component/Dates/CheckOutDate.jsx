@@ -16,6 +16,15 @@ import {
 export function CheckOutDate() {
   const [date, setDate] = React.useState(null); // Initialize date as null
 
+  const handleDateSelect = (selectedDate) => {
+    if (selectedDate) {
+      const formattedDate = format(selectedDate, "yyyy-MM-dd");
+      setDate(formattedDate);
+    }
+  };
+
+  console.log(date);
+
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -33,10 +42,10 @@ export function CheckOutDate() {
       <PopoverContent className="w-auto p-0">
         <Calendar
           mode="single"
-          selected={date}
-          onSelect={setDate}
+          selected={date ? new Date(date) : undefined} // Convert string back to Date
+          onSelect={handleDateSelect}
           initialFocus
-          disabled={(date) => date < new Date()} // Disable dates in the past
+          disabled={(date) => date < new Date()} // Disable past dates
         />
       </PopoverContent>
     </Popover>

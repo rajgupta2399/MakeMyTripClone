@@ -28,11 +28,10 @@ const Occupancy = () => {
       <div className="relative w-full rounded-lg">
         {openOptions && (
           <div
-            className={`options py-3 px-10 rounded-lg shadow-md ${
-              theme === "light"
+            className={`options py-3 px-10 rounded-lg shadow-md ${theme === "light"
                 ? "bg-white text-[#1D232A] bg-gradient-to-br from-purple-700 to-violet-900"
                 : "bg-[#30373e] text-white bg-gradient-to-br from-gray-700 to-gray-900"
-            }`}
+              }`}
           >
             {/* Adult Option */}
             <div className="optionItem flex justify-center items-center mb-4">

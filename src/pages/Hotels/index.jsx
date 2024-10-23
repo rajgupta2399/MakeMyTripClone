@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>MMT | Flight Booking</title>
+        <title>MMT | Hotels Booking</title>
         <meta name="description" content="any-description" />
       </Head>
       <TransitionEffect />

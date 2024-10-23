@@ -9,6 +9,7 @@ import "@/styles/globals.css";
 import Layout from "@/components/component/Layout/Layout";
 import Footer from "@/components/component/Footer/Footer";
 import { BackgroundBeamsWithCollisionDemo } from "@/components/component/Footer/BackgroundBeamsWithCollisionDemo";
+import { CountryProvider } from "@/components/context/CountryContext";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -32,8 +33,9 @@ export default function App({ Component, pageProps }) {
           <ThemeProvide>
             <Header />
             <ThemeSwitcher />
-            <Component {...pageProps} />
-            {/* <Footer /> */}
+            <CountryProvider>
+              <Component {...pageProps} />
+            </CountryProvider>
             <BackgroundBeamsWithCollisionDemo />
           </ThemeProvide>
         </ToastProvider>

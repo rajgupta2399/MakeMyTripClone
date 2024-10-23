@@ -22,9 +22,8 @@ import {
 import { options } from "@/lib/constants";
 
 export function Location() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
-
+  const [open, setOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState({ name: "", code: "" });
   const [countryCode, setCountryCode] = useState([]);
 
   const fetchCountryCode = async () => {
@@ -40,6 +39,12 @@ export function Location() {
     fetchCountryCode();
   }, []);
 
+  const handleClick = (country) => {
+    console.log("Country Name:", country.name);
+    console.log("Country Code:", country.code);
+    setSelectedCountry({ name: country.name, code: country.code });
+  };
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -49,9 +54,7 @@ export function Location() {
           aria-expanded={open}
           className="sm:w-[200px] justify-between w-full"
         >
-          {value
-            ? countryCode.find((country) => country.code === value)?.name
-            : "Select country..."}
+          {selectedCountry.name ? selectedCountry.name : "Select country..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -64,20 +67,19 @@ export function Location() {
               {countryCode.map((country) => (
                 <CommandItem
                   key={country.code}
-                  value={country.code} // Assuming 'code' is the unique identifier
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setOpen(false);
+                  value={country.code}
+                  onSelect={() => {
+                    handleClick(country); // Pass country to handleClick
+                    setOpen(false); // Close the popover after selection
                   }}
                 >
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === country.code ? "opacity-100" : "opacity-0"
+                      selectedCountry.code === country.code ? "opacity-100" : "opacity-0"
                     )}
                   />
-                  {country.code},{country.name}{" "}
-                  {/* Assuming 'name' is the display name */}
+                  {country.name} ({country.code})
                 </CommandItem>
               ))}
             </CommandGroup>
