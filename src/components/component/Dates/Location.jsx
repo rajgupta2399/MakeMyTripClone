@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -20,8 +20,10 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { options } from "@/lib/constants";
+import { CountryContext } from "@/components/context/CountryContext";
 
 export function Location() {
+  const { countryData, setCountryData } = useContext(CountryContext)
   const [open, setOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState({ name: "", code: "" });
   const [countryCode, setCountryCode] = useState([]);
@@ -40,9 +42,10 @@ export function Location() {
   }, []);
 
   const handleClick = (country) => {
-    console.log("Country Name:", country.name);
-    console.log("Country Code:", country.code);
+    // console.log("Country Name:", country.name);
+    // console.log("Country Code:", country.code);
     setSelectedCountry({ name: country.name, code: country.code });
+    setCountryData({ name: country.name, code: country.code })
   };
 
   return (

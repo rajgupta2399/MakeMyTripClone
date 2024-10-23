@@ -10,6 +10,8 @@ import Layout from "@/components/component/Layout/Layout";
 import Footer from "@/components/component/Footer/Footer";
 import { BackgroundBeamsWithCollisionDemo } from "@/components/component/Footer/BackgroundBeamsWithCollisionDemo";
 import { CountryProvider } from "@/components/context/CountryContext";
+import { Provider } from "react-redux";
+import store from "@/store/store";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -31,12 +33,14 @@ export default function App({ Component, pageProps }) {
       <main className={`${montserrat.variable} font-mont w-full min-h-screen`}>
         <ToastProvider>
           <ThemeProvide>
-            <Header />
-            <ThemeSwitcher />
-            <CountryProvider>
-              <Component {...pageProps} />
-            </CountryProvider>
-            <BackgroundBeamsWithCollisionDemo />
+            <Provider store={store}>
+              <Header />
+              <ThemeSwitcher />
+              <CountryProvider>
+                <Component {...pageProps} />
+              </CountryProvider>
+              <BackgroundBeamsWithCollisionDemo />
+            </Provider>
           </ThemeProvide>
         </ToastProvider>
       </main>

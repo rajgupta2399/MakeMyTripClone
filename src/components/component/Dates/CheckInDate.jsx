@@ -23,7 +23,7 @@ export function CheckInDate() {
     }
   };
 
-  console.log(date);
+  // console.log(date);
 
 
   return (

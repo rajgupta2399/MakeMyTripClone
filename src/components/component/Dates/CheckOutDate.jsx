@@ -23,7 +23,7 @@ export function CheckOutDate() {
     }
   };
 
-  console.log(date);
+  // console.log(date);
 
   return (
     <Popover>
