@@ -20,7 +20,7 @@ const Page = () => {
       </Head>
       <TransitionEffect />
       <div>
-        <div className=" sm:px-20 sm:mt-28">
+        <div className=" sm:px-16 mt-28">
           <HotelChainCarousel />
         </div>
       </div>

@@ -14,10 +14,13 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 import HotelCard from "../HotelCard/HotelCard";
 import useCountryCodeHotel from "@/components/hooks/useCountryCodeHotel";
+import { CountryContext } from "@/components/context/CountryContext";
 
 const HotelChainCarousel = () => {
     useCountryCodeHotel()
     const country = useSelector((store) => store.country.CountryHotelCode)
+    const { countryData, setCountryData } = useContext(CountryContext)
+
 
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -61,6 +64,7 @@ const HotelChainCarousel = () => {
     ) : (
         <>
             <div className="sm:max-w-[1230px] mx-auto mt-1 small mb-10 w-full">
+                <h1 className=" text-[17px] sm:pl-4 pl-4 font-semibold capitalize">Some Top Hotel In {countryData.name}</h1>
                 <div className="">
                     <Carousel
                         className="border-none max-w-[1230px] w-full  "
@@ -76,13 +80,13 @@ const HotelChainCarousel = () => {
                         }}
                         plugins={[Autoplay({ delay: 10000 })]}
                     >
-                        <CarouselContent className="py-5">
+                        <CarouselContent className="py-4">
                             {country.map((hotel, index) => (
                                 <CarouselItem
                                     key={index}
                                     className="pl-1 sm:basis-[1%] md:basis-[5%] lg:basis-[370px]"
                                 >
-                                    <Card className="cursor-pointer h-[364px] ml-5 rounded-2xl flex justify-center bg-[#1D232A] border-none">
+                                    <Card className="cursor-pointer h-[386px] ml-5 rounded-xl flex justify-center bg-[#1D232A] border-none">
                                         <Link
                                             href={""}
                                         // key={restaurant.info.id}
