@@ -20,11 +20,12 @@ import {
 } from "@/components/ui/popover";
 import { options } from "@/lib/constants";
 import { CountryContext } from "@/components/context/CountryContext";
+import { HotelCityContext } from "@/components/context/HotelCityContext";
 
 export function City() {
     const { countryData } = useContext(CountryContext);
+    const { hotelCityData, setHotelCityData } = useContext(HotelCityContext);
     const code = countryData.code;
-
     const [open, setOpen] = useState(false);
     const [selectedCity, setSelectedCity] = useState({ city: "" }); // Use city instead of name
     const [cityCode, setCityCode] = useState([]);
@@ -38,7 +39,7 @@ export function City() {
             );
             const data = await res.json();
             setCityCode(data.data);
-            console.log(data.data);
+            // console.log(data.data);
         } catch (error) {
             console.error("Error fetching city data:", error);
         }
@@ -51,6 +52,7 @@ export function City() {
     const handleClick = (city) => {
         setSelectedCity(city); // Set selected city using the city object
         setOpen(false); // Close the popover after selection
+        setHotelCityData(city)
     };
 
     return (

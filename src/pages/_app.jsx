@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import store from "@/store/store";
 import { useRouter } from "next/router";
 import HotelHeader from "./Hotels/components/Header/HotelHeader";
+import { HotelCityProvider } from "@/components/context/HotelCityContext";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -51,10 +52,12 @@ export default function App({ Component, pageProps }) {
           <ThemeProvide>
             <Provider store={store}>
               <CountryProvider>
-                {header}
-                <ThemeSwitcher />
-                <Component {...pageProps} />
-                <BackgroundBeamsWithCollisionDemo />
+                <HotelCityProvider>
+                  {header}
+                  <ThemeSwitcher />
+                  <Component {...pageProps} />
+                  <BackgroundBeamsWithCollisionDemo />
+                </HotelCityProvider>
               </CountryProvider>
             </Provider>
           </ThemeProvide>
