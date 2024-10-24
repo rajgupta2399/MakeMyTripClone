@@ -15,6 +15,7 @@ import store from "@/store/store";
 import { useRouter } from "next/router";
 import HotelHeader from "./Hotels/components/Header/HotelHeader";
 import { HotelCityProvider } from "@/components/context/HotelCityContext";
+import { HotelDetailsIdProvider } from "@/components/context/HotelDetailsId";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -27,14 +28,15 @@ const montserrat = Montserrat({
 });
 
 export default function App({ Component, pageProps }) {
-
   const router = useRouter();
   let header;
   switch (router.pathname) {
-    case '/':
+    case "/":
       header = <Header />;
       break;
-    case '/Hotels':
+    case "/Hotels":
+      header = <HotelHeader />;
+    case "/Hotels/HotelDetails/[id]":
       header = <HotelHeader />;
       break;
     default:
@@ -52,12 +54,14 @@ export default function App({ Component, pageProps }) {
           <ThemeProvide>
             <Provider store={store}>
               <CountryProvider>
-                <HotelCityProvider>
-                  {header}
-                  <ThemeSwitcher />
-                  <Component {...pageProps} />
-                  <BackgroundBeamsWithCollisionDemo />
-                </HotelCityProvider>
+                <HotelDetailsIdProvider>
+                  <HotelCityProvider>
+                    {header}
+                    <ThemeSwitcher />
+                    <Component {...pageProps} />
+                    <BackgroundBeamsWithCollisionDemo />
+                  </HotelCityProvider>
+                </HotelDetailsIdProvider>
               </CountryProvider>
             </Provider>
           </ThemeProvide>
