@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { SkeletonCard } from "../components/HotelCarousel/SkeletonCard";
 import { Divider, Rating } from "@mui/material";
 import Link from "next/link";
+import HotelRoom from "../components/HotelRooms/HotelRoom";
+import HotelLocation from "../components/HotelLocation.jsx/HotelLocation";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 const HotelDetails = () => {
   useHotelDetails();
@@ -22,7 +25,13 @@ const HotelDetails = () => {
 
   const { loading, error } = useHotelDetails();
   const hotelDetail = useSelector((store) => store.hotelDetail.hotelDetail);
-  console.log(hotelDetail);
+  // console.log(hotelDetail);
+
+  const strongTagText = hotelDetail?.hotelDescription
+    ? hotelDetail?.hotelDescription
+        .match(/<strong>(.*?)<\/strong>/g)
+        ?.map((tag) => tag.replace(/<\/?strong>/g, "")) || []
+    : [];
 
   const dispatch = useDispatch();
 
@@ -194,6 +203,46 @@ const HotelDetails = () => {
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Hotel Rooms */}
+      <div className="hotelRoom pb-5">
+        {hotelDetail && hotelDetail?.rooms && hotelDetail?.rooms.length > 0 ? (
+          <>
+            {hotelDetail?.rooms.map((item, index) => {
+              return (
+                <HotelRoom
+                  key={index}
+                  item={item}
+                  strongTagText={strongTagText} // Room-specific strong tag text
+                />
+              );
+            })}
+
+            {/* Render HotelRoom with static props only once */}
+            {/* <HotelRoom
+              hotelDetail={hotelDetail}
+              // You can pass more static props if needed
+            /> */}
+
+            <></>
+          </>
+        ) : (
+          <div>No rooms available</div>
+        )}
+      </div>
+
+      {/** Hotel Location Section */}
+      <div>
+        <div className="mt-5">
+          <HotelLocation />
+        </div>
+      </div>
+
+      <div>
+        <div className="my-5 hidden sm:block md:block lg:block xl:block">
+          <Testimonial />
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ const useHotelDetails = () => {
 
       if (res.ok) {
         dispatch(addHotelDetail(data.data));
-        console.log(data.data);
+        // console.log(data.data);
 
         // Dispatch only if successful
       } else {
