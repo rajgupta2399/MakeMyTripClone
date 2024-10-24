@@ -12,7 +12,6 @@ const useHotelFacility = () => {
         );
         const data = await res.json();
         dispatch(addHotelFacility(data.data));
-        console.log(data.data);
 
     };
 

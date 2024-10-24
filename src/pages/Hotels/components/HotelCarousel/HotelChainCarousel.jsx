@@ -62,7 +62,7 @@ const HotelChainCarousel = () => {
     </div>
   ) : (
     <>
-      <div className="sm:max-w-[1230px] mx-auto mt-1 small mb-10 w-full">
+      <div className="sm:max-w-[1230px] mx-auto mt-1 small mb-7 w-full">
         <h1 className=" text-[17px] sm:pl-4 pl-4 font-semibold capitalize">
           Some Top Hotel In {countryData.name}
         </h1>

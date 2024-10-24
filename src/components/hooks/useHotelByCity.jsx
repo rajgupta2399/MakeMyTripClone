@@ -16,7 +16,6 @@ const useHotelByCity = () => {
     );
     const data = await res.json();
     dispatch(addCityHotel(data.data));
-    console.log(data.data);
   };
 
   useEffect(() => {
