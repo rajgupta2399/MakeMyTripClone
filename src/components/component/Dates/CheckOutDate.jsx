@@ -12,6 +12,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useContext } from "react";
+import { HotelSearchContext } from "@/components/context/HotelSearch";
 
 export function CheckOutDate() {
   const getFutureDate = (daysToAdd) => {
@@ -19,8 +21,8 @@ export function CheckOutDate() {
     date.setDate(date.getDate() + daysToAdd); // Add the number of days
 
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
 
     return `${year}-${month}-${day}`;
   };
@@ -34,7 +36,24 @@ export function CheckOutDate() {
     }
   };
 
-  // console.log(date);
+  const {
+    checkInDate,
+    setCheckInDate,
+    checkOutDate,
+    setCheckOutDate,
+    city,
+    setCity,
+    occupancy,
+    setOccupancy,
+    guestNationality,
+    setGuestNationality,
+    currency,
+    setCurrency,
+    hotelIds,
+    setHotelIds,
+  } = useContext(HotelSearchContext);
+
+  setCheckOutDate(date);
 
   return (
     <Popover>

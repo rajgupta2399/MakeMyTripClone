@@ -22,12 +22,32 @@ import {
 import { options } from "@/lib/constants";
 import { CountryContext } from "@/components/context/CountryContext";
 import { City } from "./City";
+import { HotelSearchContext } from "@/components/context/HotelSearch";
 
 export function Location() {
-  const { countryData, setCountryData } = useContext(CountryContext)
+  const { countryData, setCountryData } = useContext(CountryContext);
   const [open, setOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState({ name: "India", code: "IN" });
+  const [selectedCountry, setSelectedCountry] = useState({
+    name: "India",
+    code: "IN",
+  });
   const [countryCode, setCountryCode] = useState([]);
+  const {
+    checkInDate,
+    setCheckInDate,
+    checkOutDate,
+    setCheckOutDate,
+    city,
+    setCity,
+    occupancy,
+    setOccupancy,
+    guestNationality,
+    setGuestNationality,
+    currency,
+    setCurrency,
+    hotelIds,
+    setHotelIds,
+  } = useContext(HotelSearchContext);
 
   const fetchCountryCode = async () => {
     const res = await fetch(
@@ -46,8 +66,9 @@ export function Location() {
     // console.log("Country Name:", country.name);
     // console.log("Country Code:", country.code);
     setSelectedCountry({ name: country.name, code: country.code });
-    setCountryData({ name: country.name, code: country.code })
+    setCountryData({ name: country.name, code: country.code });
   };
+  setGuestNationality(selectedCountry.code);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -80,7 +101,9 @@ export function Location() {
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      selectedCountry.code === country.code ? "opacity-100" : "opacity-0"
+                      selectedCountry.code === country.code
+                        ? "opacity-100"
+                        : "opacity-0"
                     )}
                   />
                   {country.name} ({country.code})

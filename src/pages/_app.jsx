@@ -16,6 +16,7 @@ import { useRouter } from "next/router";
 import HotelHeader from "./Hotels/components/Header/HotelHeader";
 import { HotelCityProvider } from "@/components/context/HotelCityContext";
 import { HotelDetailsIdProvider } from "@/components/context/HotelDetailsId";
+import { HotelSearchProvider } from "@/components/context/HotelSearch";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -56,10 +57,12 @@ export default function App({ Component, pageProps }) {
               <CountryProvider>
                 <HotelDetailsIdProvider>
                   <HotelCityProvider>
-                    {header}
-                    <ThemeSwitcher />
-                    <Component {...pageProps} />
-                    <BackgroundBeamsWithCollisionDemo />
+                    <HotelSearchProvider>
+                      {header}
+                      <ThemeSwitcher />
+                      <Component {...pageProps} />
+                      <BackgroundBeamsWithCollisionDemo />
+                    </HotelSearchProvider>
                   </HotelCityProvider>
                 </HotelDetailsIdProvider>
               </CountryProvider>

@@ -12,13 +12,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useContext } from "react";
+import { HotelSearchContext } from "@/components/context/HotelSearch";
 
 export function CheckInDate() {
   const getCurrentDate = () => {
     const date = new Date();
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
 
     return `${year}-${month}-${day}`;
   };
@@ -31,11 +33,26 @@ export function CheckInDate() {
     }
   };
 
+  const {
+    checkInDate,
+    setCheckInDate,
+    checkOutDate,
+    setCheckOutDate,
+    city,
+    setCity,
+    occupancy,
+    setOccupancy,
+    guestNationality,
+    setGuestNationality,
+    currency,
+    setCurrency,
+    hotelIds,
+    setHotelIds,
+  } = useContext(HotelSearchContext);
 
-
+  setCheckInDate(date);
 
   // console.log(date);
-
 
   return (
     <Popover>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { useTheme } from "next-themes";
 import { CheckInDate } from "../Dates/CheckInDate";
 import { CheckOutDate } from "../Dates/CheckOutDate";
@@ -7,24 +7,52 @@ import Occupancy from "../Dates/Occupancy";
 import { Location } from "../Dates/Location";
 import Link from "next/link";
 import { City } from "../Dates/City";
+import { HotelSearchContext } from "@/components/context/HotelSearch";
 
 const AdvanceSearchHotel = () => {
   const { theme } = useTheme();
 
+  const {
+    checkInDate,
+    setCheckInDate,
+    checkOutDate,
+    setCheckOutDate,
+    city,
+    setCity,
+    occupancy,
+    setOccupancy,
+    guestNationality,
+    setGuestNationality,
+    currency,
+    setCurrency,
+    hotelIds,
+    setHotelIds,
+  } = useContext(HotelSearchContext);
+
+  console.log(checkInDate);
+  console.log(checkOutDate);
+  console.log(city);
+  console.log(occupancy);
+  console.log(guestNationality);
+  console.log(currency);
+  console.log(hotelIds);
+
   return (
     <>
       <div
-        className={`rounded-lg sm:relative ml-0 sm:h-[280px] h-[520px] sm:mb-0 p-4 flex flex-col gap-4 sm:flex-col sm:gap-4 sm:items-center sm:justify-center  ${theme === "light"
-          ? "bg-white text-[#1D232A] bg-gradient-to-br from-purple-700 to-violet-900"
-          : "bg-[#30373e] text-white bg-gradient-to-br from-gray-800 to-gray-900"
-          }`}
+        className={`rounded-lg sm:relative ml-0 sm:h-[280px] h-[520px] sm:mb-0 p-4 flex flex-col gap-4 sm:flex-col sm:gap-4 sm:items-center sm:justify-center  ${
+          theme === "light"
+            ? "bg-white text-[#1D232A] bg-gradient-to-br from-purple-700 to-violet-900"
+            : "bg-[#30373e] text-white bg-gradient-to-br from-gray-800 to-gray-900"
+        }`}
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-4 sm:items-center sm:justify-center">
           <div className="flex flex-col gap-4">
             <div className="flex-1">
               <label
-                className={`block text-sm font-medium mb-1 ${theme === "light" ? "text-gray-700" : "text-gray-300"
-                  }`}
+                className={`block text-sm font-medium mb-1 ${
+                  theme === "light" ? "text-gray-700" : "text-gray-300"
+                }`}
               >
                 Check-In Date
               </label>
@@ -33,8 +61,9 @@ const AdvanceSearchHotel = () => {
 
             <div className="flex-1 mb-1">
               <label
-                className={`block text-sm font-medium mb-1 ${theme === "light" ? "text-gray-700" : "text-gray-300"
-                  }`}
+                className={`block text-sm font-medium mb-1 ${
+                  theme === "light" ? "text-gray-700" : "text-gray-300"
+                }`}
               >
                 Check-Out Date
               </label>
@@ -44,20 +73,21 @@ const AdvanceSearchHotel = () => {
 
           <div className="flex-1">
             <label
-              className={`block text-sm font-medium mb-2 ${theme === "light" ? "text-gray-700" : "text-gray-300"
-                }`}
+              className={`block text-sm font-medium mb-2 ${
+                theme === "light" ? "text-gray-700" : "text-gray-300"
+              }`}
             >
               Guests
             </label>
             <Occupancy />
           </div>
 
-
           <div className="flex flex-col gap-4">
             <div className="flex-1">
               <label
-                className={`block text-sm font-medium mb-1 ${theme === "light" ? "text-gray-700" : "text-gray-300"
-                  }`}
+                className={`block text-sm font-medium mb-1 ${
+                  theme === "light" ? "text-gray-700" : "text-gray-300"
+                }`}
               >
                 Location
               </label>
@@ -66,8 +96,9 @@ const AdvanceSearchHotel = () => {
 
             <div className="flex-1">
               <label
-                className={`block text-sm font-medium mb-1 ${theme === "light" ? "text-gray-700" : "text-gray-300"
-                  }`}
+                className={`block text-sm font-medium mb-1 ${
+                  theme === "light" ? "text-gray-700" : "text-gray-300"
+                }`}
               >
                 City
               </label>
@@ -86,10 +117,7 @@ const AdvanceSearchHotel = () => {
             </button>
           </Link>
         </div>
-
       </div>
-
-
     </>
   );
 };

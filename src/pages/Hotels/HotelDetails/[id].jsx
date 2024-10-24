@@ -70,7 +70,7 @@ const HotelDetails = () => {
 
             <div className="images">
               <div className="flex flex-col lg:flex-row gap-4">
-                <div className="w-full lg:w-[490px]">
+                <div className="w-full lg:w-[490px] lg:h-[465px]">
                   <img
                     src={hotelDetail?.main_photo || "/placeholder.jpg"}
                     alt="Main Hotel"
@@ -78,7 +78,7 @@ const HotelDetails = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <div className="w-full lg:w-[238px]">
+                  <div className="w-full lg:w-[238px] lg:h-[225px]">
                     <img
                       src={
                         hotelDetail?.hotelImages[1]?.url || "/placeholder.jpg"
@@ -87,7 +87,7 @@ const HotelDetails = () => {
                       className="rounded-lg w-full h-full object-cover"
                     />
                   </div>
-                  <div className="relative w-full lg:w-[238px]">
+                  <div className="relative w-full lg:w-[238px] lg:h-[225px]">
                     <img
                       src={
                         hotelDetail?.hotelImages[5]?.url || "/placeholder.jpg"
