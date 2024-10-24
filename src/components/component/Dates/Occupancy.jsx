@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useTheme } from "next-themes";
 import { HotelSearchContext } from "@/components/context/HotelSearch";
 
@@ -12,16 +12,6 @@ const Occupancy = () => {
     adult: 2,
     children: 1,
   });
-
-  const handleOption = (name, operation) => {
-    setOptions((prev) => {
-      return {
-        ...prev,
-        [name]:
-          operation === "i" ? prev[name] + 1 : Math.max(prev[name] - 1, 1),
-      };
-    });
-  };
 
   const {
     checkInDate,
@@ -40,7 +30,19 @@ const Occupancy = () => {
     setHotelIds,
   } = useContext(HotelSearchContext);
 
-  setOccupancy(options);
+  const handleOption = (name, operation) => {
+    setOptions((prev) => {
+      return {
+        ...prev,
+        [name]:
+          operation === "i" ? prev[name] + 1 : Math.max(prev[name] - 1, 1),
+      };
+    });
+  };
+
+  useEffect(() => {
+    setOccupancy(options);
+  }, [options]);
 
   return (
     <div className="flex justify-center ">

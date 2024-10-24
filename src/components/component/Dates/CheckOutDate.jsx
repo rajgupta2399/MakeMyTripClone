@@ -29,13 +29,6 @@ export function CheckOutDate() {
 
   const [date, setDate] = React.useState(getFutureDate(1)); // Initialize date as null
 
-  const handleDateSelect = (selectedDate) => {
-    if (selectedDate) {
-      const formattedDate = format(selectedDate, "yyyy-MM-dd");
-      setDate(formattedDate);
-    }
-  };
-
   const {
     checkInDate,
     setCheckInDate,
@@ -53,7 +46,13 @@ export function CheckOutDate() {
     setHotelIds,
   } = useContext(HotelSearchContext);
 
-  setCheckOutDate(date);
+  const handleDateSelect = (selectedDate) => {
+    if (selectedDate) {
+      const formattedDate = format(selectedDate, "yyyy-MM-dd");
+      setDate(formattedDate);
+      setCheckOutDate(formattedDate);
+    }
+  };
 
   return (
     <Popover>

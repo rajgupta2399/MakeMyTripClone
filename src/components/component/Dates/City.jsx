@@ -70,8 +70,8 @@ export function City() {
     setSelectedCity(city); // Set selected city using the city object
     setOpen(false); // Close the popover after selection
     setHotelCityData(city);
+    setCity(city.city);
   };
-  setCity(selectedCity.city);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

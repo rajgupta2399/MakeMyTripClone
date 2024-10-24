@@ -67,8 +67,8 @@ export function Location() {
     // console.log("Country Code:", country.code);
     setSelectedCountry({ name: country.name, code: country.code });
     setCountryData({ name: country.name, code: country.code });
+    setGuestNationality(country.code);
   };
-  setGuestNationality(selectedCountry.code);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

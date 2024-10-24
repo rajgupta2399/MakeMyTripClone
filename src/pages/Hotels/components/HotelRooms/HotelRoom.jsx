@@ -6,7 +6,7 @@ import { HotelSearchContext } from "@/components/context/HotelSearch";
 import Link from "next/link";
 import { SkeletonCard } from "../HotelCarousel/SkeletonCard";
 
-const HotelRoom = ({ strongTagText, options, formattedDates }) => {
+const HotelRoom = ({ strongTagText, options, formattedDates,item }) => {
   const { hotelId, setHotelId } = useContext(HotelDetailsId);
   const {
     checkInDate,

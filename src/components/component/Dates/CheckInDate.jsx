@@ -26,13 +26,6 @@ export function CheckInDate() {
   };
   const [date, setDate] = React.useState(getCurrentDate());
 
-  const handleDateSelect = (selectedDate) => {
-    if (selectedDate) {
-      const formattedDate = format(selectedDate, "yyyy-MM-dd");
-      setDate(formattedDate);
-    }
-  };
-
   const {
     checkInDate,
     setCheckInDate,
@@ -50,7 +43,13 @@ export function CheckInDate() {
     setHotelIds,
   } = useContext(HotelSearchContext);
 
-  setCheckInDate(date);
+  const handleDateSelect = (selectedDate) => {
+    if (selectedDate) {
+      const formattedDate = format(selectedDate, "yyyy-MM-dd");
+      setDate(formattedDate);
+      setCheckInDate(formattedDate);
+    }
+  };
 
   // console.log(date);
 

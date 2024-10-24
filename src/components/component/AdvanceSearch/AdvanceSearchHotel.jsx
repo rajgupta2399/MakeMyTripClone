@@ -12,31 +12,6 @@ import { HotelSearchContext } from "@/components/context/HotelSearch";
 const AdvanceSearchHotel = () => {
   const { theme } = useTheme();
 
-  const {
-    checkInDate,
-    setCheckInDate,
-    checkOutDate,
-    setCheckOutDate,
-    city,
-    setCity,
-    occupancy,
-    setOccupancy,
-    guestNationality,
-    setGuestNationality,
-    currency,
-    setCurrency,
-    hotelIds,
-    setHotelIds,
-  } = useContext(HotelSearchContext);
-
-  console.log(checkInDate);
-  console.log(checkOutDate);
-  console.log(city);
-  console.log(occupancy);
-  console.log(guestNationality);
-  console.log(currency);
-  console.log(hotelIds);
-
   return (
     <>
       <div

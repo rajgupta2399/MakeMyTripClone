@@ -10,6 +10,7 @@ import Link from "next/link";
 import HotelRoom from "../components/HotelRooms/HotelRoom";
 import HotelLocation from "../components/HotelLocation.jsx/HotelLocation";
 import Testimonial from "../components/Testimonial/Testimonial";
+import { HotelSearchContext } from "@/components/context/HotelSearch";
 
 const HotelDetails = () => {
   useHotelDetails();
@@ -25,6 +26,31 @@ const HotelDetails = () => {
 
   const { loading, error } = useHotelDetails();
   const hotelDetail = useSelector((store) => store.hotelDetail.hotelDetail);
+
+  const {
+    checkInDate,
+    setCheckInDate,
+    checkOutDate,
+    setCheckOutDate,
+    city,
+    setCity,
+    occupancy,
+    setOccupancy,
+    guestNationality,
+    setGuestNationality,
+    currency,
+    setCurrency,
+    hotelIds,
+    setHotelIds,
+  } = useContext(HotelSearchContext);
+
+  console.log(checkInDate);
+  console.log(checkOutDate);
+  console.log(city);
+  console.log(occupancy);
+  console.log(guestNationality);
+  console.log(currency);
+  console.log(hotelIds);
   // console.log(hotelDetail);
 
   const strongTagText = hotelDetail?.hotelDescription
@@ -214,7 +240,6 @@ const HotelDetails = () => {
               return (
                 <HotelRoom
                   key={index}
-                  item={item}
                   strongTagText={strongTagText} // Room-specific strong tag text
                 />
               );
