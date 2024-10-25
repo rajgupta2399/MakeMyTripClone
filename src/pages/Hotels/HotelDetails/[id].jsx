@@ -11,6 +11,7 @@ import HotelRoom from "../components/HotelRooms/HotelRoom";
 import HotelLocation from "../components/HotelLocation.jsx/HotelLocation";
 import Testimonial from "../components/Testimonial/Testimonial";
 import { HotelSearchContext } from "@/components/context/HotelSearch";
+import AdvanceSearchHotel from "@/components/component/AdvanceSearch/AdvanceSearchHotel";
 
 const HotelDetails = () => {
   useHotelDetails();
@@ -87,7 +88,7 @@ const HotelDetails = () => {
 
   return (
     <div className=" text-white px-6 sm:px-8 md:px-10 lg:px-16 xl:px-16 2xl:px-28 mt-28 mb-8">
-      <div className="centeralContainer mt-5 border border-gray-700 rounded-lg">
+      <div className="centeralContainer mt-5 mb-5 border border-gray-700 rounded-lg">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 bg-[#14181B] p-4 rounded-lg">
           {/* Left section with hotel images and details */}
           <div className="hotelImages w-full lg:w-[60%]">
@@ -231,6 +232,12 @@ const HotelDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* Search ur hotel rooms */}
+      <div>
+        <h1 className=" text-center mb-2 font-bold text-lg">Search Your Hotel Rooms On Prefer Dates</h1>
+      </div>
+      <AdvanceSearchHotel />
 
       {/* Hotel Rooms */}
       <div className="hotelRoom pb-5">
