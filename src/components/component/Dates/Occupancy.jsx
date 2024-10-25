@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { HotelSearchContext } from "@/components/context/HotelSearch";
 
@@ -40,8 +40,15 @@ const Occupancy = () => {
     });
   };
 
+  const occupancies = [
+    {
+      adults: options.adult,
+      children: [options.children > 0 ? options.children : 1],
+    },
+  ];
+
   useEffect(() => {
-    setOccupancy(options);
+    setOccupancy(occupancies);
   }, [options]);
 
   return (
