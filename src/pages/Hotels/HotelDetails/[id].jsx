@@ -233,12 +233,6 @@ const HotelDetails = () => {
         </div>
       </div>
 
-      {/* Search ur hotel rooms */}
-      <div>
-        <h1 className=" text-center mb-2 font-bold text-lg">Search Your Hotel Rooms On Prefer Dates</h1>
-      </div>
-      <AdvanceSearchHotel />
-
       {/* Hotel Rooms */}
       <div className="hotelRoom pb-5">
         {hotelDetail && hotelDetail?.rooms && hotelDetail?.rooms.length > 0 ? (
