@@ -74,15 +74,6 @@ const AdvanceSearchHotel = () => {
       router.push("/Hotels/");
     }
   };
-
-  console.log(checkInDate);
-  console.log(checkOutDate);
-  console.log(city);
-  console.log(occupancy);
-  console.log(guestNationality);
-  console.log(currency);
-  console.log(hotelIds);
-
   return (
     <>
       <div
