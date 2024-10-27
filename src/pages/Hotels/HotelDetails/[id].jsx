@@ -2,7 +2,7 @@ import { HotelDetailsId } from "@/components/context/HotelDetailsId";
 import useHotelDetails from "@/components/hooks/useHotelDetails";
 import useHotelReview from "@/components/hooks/useHotelReview";
 import { useParams } from "next/navigation";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SkeletonCard } from "../components/HotelCarousel/SkeletonCard";
 import { Divider, Rating } from "@mui/material";
@@ -11,7 +11,8 @@ import HotelRoom from "../components/HotelRooms/HotelRoom";
 import HotelLocation from "../components/HotelLocation.jsx/HotelLocation";
 import Testimonial from "../components/Testimonial/Testimonial";
 import { HotelSearchContext } from "@/components/context/HotelSearch";
-import AdvanceSearchHotel from "@/components/component/AdvanceSearch/AdvanceSearchHotel";
+import { addhotelRoom } from "@/store/hotelRoomSlice";
+import HotelRates from "./hotelRates";
 
 const HotelDetails = () => {
   useHotelDetails();
@@ -54,67 +55,13 @@ const HotelDetails = () => {
     // toast.success("Hotel Added To Wishlist");
   };
 
-  // console.log(checkInDate);
-  // console.log(checkOutDate);
-  // console.log(city);
-  // console.log(occupancy);
-  // console.log(guestNationality);
-  // console.log(currency);
-  // console.log(hotelIds.id);
-
-
-  const [isFetchingData, setIsFetchingData] = useState(false);
-
-   // Fetch data function
-  //  const fetchData = async () => {
-  //   if (isFetchingData) return; // Prevent unnecessary fetches
-  //   setIsFetchingData(true); // Set fetching state
-
-  //   const options = {
-  //     method: "POST",
-  //     headers: {
-  //       accept: "application/json",
-  //       "content-type": "application/json",
-  //       "X-API-Key": process.env.REACT_APP_HOTEL_API_KEY,
-  //     },
-  //     body: JSON.stringify({
-  //       hotelIds: hotelId ? [hotelId] : ["lp1b578"],
-  //       occupancies: occupancies,
-  //       currency: "USD",
-  //       guestNationality: guestNationality || "US", // Default to US if not available
-  //       checkin: checkInDate,
-  //       checkout: adjustedCheckOutDate,
-  //       countryCode: guestNationality ? guestNationality : "US", // Default to US if not available
-  //       cityName: city || "New York", // Default to New York if not available
-  //       latitude: 34.052235, // Replace with your logic for latitude
-  //       longitude: -118.243683, // Replace with your logic for longitude
-  //     }),
-  //   };
-
-  //   try {
-  //     const response = await fetch("https://api.liteapi.travel/v3.0/hotels/rates", options);
-  //     const data = await response.json();
-
-  //     if (data && data.data) {
-  //       dispatch(addHotelRoom(data.data)); // Dispatch action if data is available
-  //     } else {
-  //       dispatch(
-  //         addHotelRoom({
-  //           error: {
-  //             code: 2001,
-  //             message: "No availability found",
-  //           },
-  //         })
-  //       );
-  //     }
-  //   } catch (err) {
-  //     console.error("Fetch error:", err);
-  //   } finally {
-  //     setIsFetchingData(false); // Reset fetching state
-  //   }
-  // };
-
-
+  console.log(checkInDate);
+  console.log(checkOutDate);
+  console.log(city);
+  console.log(occupancy);
+  console.log(guestNationality);
+  console.log(currency);
+  console.log(hotelIds.id);
 
   if (loading) {
     return (
@@ -307,20 +254,19 @@ const HotelDetails = () => {
         )}
       </div> */}
 
-<div className="hotelRoom pb-5">
-  {hotelDetail && hotelDetail?.rooms && hotelDetail?.rooms.length > 0 ? (
-    hotelDetail.rooms.map((item, index) => (
-      <HotelRoom
-        key={index}
-        item={item}
-        strongTagText={strongTagText} // Room-specific strong tag text
-      />
-    ))
-  ) : (
-    <div>No rooms available</div>
-  )}
-</div>
-
+      <div className="hotelRoom pb-5">
+        {hotelDetail && hotelDetail?.rooms && hotelDetail?.rooms.length > 0 ? (
+          hotelDetail.rooms.map((item, index) => (
+            <HotelRoom
+              key={index}
+              item={item}
+              strongTagText={strongTagText} // Room-specific strong tag text
+            />
+          ))
+        ) : (
+          <div>No rooms available</div>
+        )}
+      </div>
 
       {/** Hotel Location Section */}
       <div>
@@ -334,6 +280,8 @@ const HotelDetails = () => {
           <Testimonial />
         </div>
       </div>
+
+      <HotelRates />
     </div>
   );
 };
