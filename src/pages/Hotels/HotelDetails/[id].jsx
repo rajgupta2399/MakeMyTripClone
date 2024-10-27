@@ -16,42 +16,29 @@ import AdvanceSearchHotel from "@/components/component/AdvanceSearch/AdvanceSear
 const HotelDetails = () => {
   useHotelDetails();
   const { hotelId, setHotelId } = useContext(HotelDetailsId);
+  const {
+    checkInDate,
+    checkOutDate,
+    city,
+    occupancy,
+    guestNationality,
+    currency,
+    hotelIds,
+    setHotelIds,
+  } = useContext(HotelSearchContext);
   const params = useParams();
   const id = params ? params.id : null;
 
   useEffect(() => {
     if (id !== hotelId.id) {
       setHotelId({ id });
+      setHotelIds({ id });
     }
   }, [id]);
 
   const { loading, error } = useHotelDetails();
   const hotelDetail = useSelector((store) => store.hotelDetail.hotelDetail);
 
-  const {
-    checkInDate,
-    setCheckInDate,
-    checkOutDate,
-    setCheckOutDate,
-    city,
-    setCity,
-    occupancy,
-    setOccupancy,
-    guestNationality,
-    setGuestNationality,
-    currency,
-    setCurrency,
-    hotelIds,
-    setHotelIds,
-  } = useContext(HotelSearchContext);
-
-  console.log(checkInDate);
-  console.log(checkOutDate);
-  console.log(city);
-  console.log(occupancy);
-  console.log(guestNationality);
-  console.log(currency);
-  console.log(hotelIds);
   // console.log(hotelDetail);
 
   const strongTagText = hotelDetail?.hotelDescription
@@ -66,6 +53,14 @@ const HotelDetails = () => {
     // dispatch(addToWishList(item));
     // toast.success("Hotel Added To Wishlist");
   };
+
+  console.log(checkInDate);
+  console.log(checkOutDate);
+  console.log(city);
+  console.log(occupancy);
+  console.log(guestNationality);
+  console.log(currency);
+  console.log(hotelIds.id);
 
   if (loading) {
     return (
