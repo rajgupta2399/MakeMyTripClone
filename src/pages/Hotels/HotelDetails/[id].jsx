@@ -13,6 +13,7 @@ import Testimonial from "../components/Testimonial/Testimonial";
 import { HotelSearchContext } from "@/components/context/HotelSearch";
 import { addhotelRoom } from "@/store/hotelRoomSlice";
 import HotelRates from "./hotelRates";
+import store from "@/store/store";
 
 const HotelDetails = () => {
   useHotelDetails();
@@ -38,6 +39,7 @@ const HotelDetails = () => {
   }, [id]);
 
   const { loading, error } = useHotelDetails();
+  const hotelRoom = useSelector((store) => store.hotelRoom.hotelRoom);
   const hotelDetail = useSelector((store) => store.hotelDetail.hotelDetail);
 
   // console.log(hotelDetail);
@@ -55,13 +57,13 @@ const HotelDetails = () => {
     // toast.success("Hotel Added To Wishlist");
   };
 
-  console.log(checkInDate);
-  console.log(checkOutDate);
-  console.log(city);
-  console.log(occupancy);
-  console.log(guestNationality);
-  console.log(currency);
-  console.log(hotelIds.id);
+  // console.log(checkInDate);
+  // console.log(checkOutDate);
+  // console.log(city);
+  // console.log(occupancy);
+  // console.log(guestNationality);
+  // console.log(currency);
+  // console.log(hotelIds.id);
 
   if (loading) {
     return (
@@ -255,7 +257,7 @@ const HotelDetails = () => {
       </div> */}
 
       <div className="hotelRoom pb-5">
-        {hotelDetail && hotelDetail?.rooms && hotelDetail?.rooms.length > 0 ? (
+        {hotelRoom && hotelRoom[0]?.roomTypes?.length > 0 ? (
           hotelDetail.rooms.map((item, index) => (
             <HotelRoom
               key={index}
@@ -264,7 +266,15 @@ const HotelDetails = () => {
             />
           ))
         ) : (
-          <div>No rooms available</div>
+          <div>
+            <h1 className=" capitalize text-center font-bold text-lg">
+              No rooms available
+            </h1>
+            <div className=" flex gap-3 my-5">
+              <SkeletonCard />
+              <SkeletonCard />
+            </div>
+          </div>
         )}
       </div>
 
