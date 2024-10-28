@@ -16,6 +16,7 @@ import HotelRates from "./hotelRates";
 import store from "@/store/store";
 import { addhotelWatchlist } from "@/store/hotelWatchlistSlice";
 import toast from "react-hot-toast";
+import { HotelRoomSkeletonCard } from "../components/Skeletons/hotelRoomSkeletonCard";
 
 const HotelDetails = () => {
   useHotelDetails();
@@ -56,7 +57,7 @@ const HotelDetails = () => {
 
   const handleWishlist = (item) => {
     dispatch(addhotelWatchlist(item));
-    toast.success("Hotel Added To Wishlist")
+    toast.success("Hotel Added To Wishlist");
     // toast.success("Hotel Added To Wishlist");
   };
 
@@ -70,19 +71,10 @@ const HotelDetails = () => {
 
   if (loading) {
     return (
-      <div className=" my-14 mx-32">
-        <div className=" flex gap-3 my-5">
-          <SkeletonCard />
-          <SkeletonCard />
-        </div>
-        <div className=" flex gap-3 my-5">
-          <SkeletonCard />
-          <SkeletonCard />
-        </div>
-        <div className=" flex gap-3 my-5">
-          <SkeletonCard />
-          <SkeletonCard />
-        </div>
+      <div className=" flex flex-col my-28 mx-14">
+       <HotelRoomSkeletonCard/>
+       <HotelRoomSkeletonCard/>
+       <HotelRoomSkeletonCard/>
       </div>
     );
   }
@@ -118,7 +110,7 @@ const HotelDetails = () => {
                   <div className="w-full lg:w-[238px] lg:h-[225px]">
                     <img
                       src={
-                        hotelDetail?.hotelImages[1]?.url || "/placeholder.jpg"
+                        hotelDetail?.hotelImages?.[1]?.url || "/placeholder.jpg"
                       }
                       alt="Hotel"
                       className="rounded-lg w-full h-full object-cover"
@@ -127,7 +119,7 @@ const HotelDetails = () => {
                   <div className="relative w-full lg:w-[238px] lg:h-[225px]">
                     <img
                       src={
-                        hotelDetail?.hotelImages[5]?.url || "/placeholder.jpg"
+                        hotelDetail?.hotelImages?.[5]?.url || "/placeholder.jpg"
                       }
                       alt="Hotel"
                       className="rounded-lg w-full h-full object-cover"
@@ -261,7 +253,7 @@ const HotelDetails = () => {
 
       <div className="hotelRoom pb-5">
         {hotelRoom && hotelRoom[0]?.roomTypes?.length > 0 ? (
-          hotelDetail.rooms.map((item, index) => (
+          hotelDetail?.rooms?.map((item, index) => (
             <HotelRoom
               key={index}
               item={item}
@@ -274,8 +266,7 @@ const HotelDetails = () => {
               No rooms available
             </h1>
             <div className=" flex gap-3 my-5">
-              <SkeletonCard />
-              <SkeletonCard />
+              <HotelRoomSkeletonCard />
             </div>
           </div>
         )}
