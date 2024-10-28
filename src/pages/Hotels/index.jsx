@@ -23,7 +23,6 @@ const Page = () => {
         <title>MMT | Hotels Booking</title>
         <meta name="description" content="any-description" />
       </Head>
-      <TransitionEffect />
       <div>
         <div className=" sm:px-16 mt-28">
           <HotelChainCarousel />

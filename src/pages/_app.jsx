@@ -15,6 +15,7 @@ import HotelHeader from "./Hotels/components/Header/HotelHeader";
 import { HotelCityProvider } from "@/components/context/HotelCityContext";
 import { HotelDetailsIdProvider } from "@/components/context/HotelDetailsId";
 import { HotelSearchProvider } from "@/components/context/HotelSearch";
+import { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
@@ -29,6 +30,14 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true); // Mark as mounted on client-side
+  }, []);
+
+  if (!isMounted) return null; // Avoid rendering until fully mounted
+
   let header;
   switch (router.pathname) {
     case "/":
@@ -36,7 +45,11 @@ export default function App({ Component, pageProps }) {
       break;
     case "/Hotels":
       header = <HotelHeader />;
+      break;
     case "/Hotels/HotelDetails/[id]":
+      header = <HotelHeader />;
+      break;
+    case "/Hotels/Wishlist":
       header = <HotelHeader />;
       break;
     default:
