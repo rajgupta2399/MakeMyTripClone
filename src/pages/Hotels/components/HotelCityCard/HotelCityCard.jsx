@@ -7,6 +7,7 @@ import useHotelByCity from "@/components/hooks/useHotelByCity";
 import { addCityHotel } from "@/store/cityHotelSlice";
 import MainHotelCard from "./MainHotelCard";
 import { HotelCityContext } from "@/components/context/HotelCityContext";
+import { HotelRoomSkeletonCard } from "../Skeletons/hotelRoomSkeletonCard";
 
 const HotelCityCard = () => {
   useHotelFacility();
@@ -22,6 +23,8 @@ const HotelCityCard = () => {
     );
     dispatch(addCityHotel(filterLogic));
   };
+
+  
 
   return (
     <div className="flex flex-col sm:h-[7500px] lg:flex-row gap-10 mb-10">
@@ -75,7 +78,8 @@ const HotelCityCard = () => {
         ) : (
           <div className="flex flex-col gap-10">
             <p className="text-white">No Hotels available For This Filter</p>
-            <Skeleton />
+            <HotelRoomSkeletonCard/>
+            <HotelRoomSkeletonCard/>
           </div>
         )}
       </div>
