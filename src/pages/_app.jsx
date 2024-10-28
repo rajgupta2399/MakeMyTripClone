@@ -6,8 +6,6 @@ import ThemeSwitcher from "@/components/component/Header/ThemeSwitcher";
 import ThemeProvide from "@/components/component/Header/ThemeProvide";
 import Head from "next/head";
 import "@/styles/globals.css";
-import Layout from "@/components/component/Layout/Layout";
-import Footer from "@/components/component/Footer/Footer";
 import { BackgroundBeamsWithCollisionDemo } from "@/components/component/Footer/BackgroundBeamsWithCollisionDemo";
 import { CountryProvider } from "@/components/context/CountryContext";
 import { Provider } from "react-redux";
@@ -17,6 +15,7 @@ import HotelHeader from "./Hotels/components/Header/HotelHeader";
 import { HotelCityProvider } from "@/components/context/HotelCityContext";
 import { HotelDetailsIdProvider } from "@/components/context/HotelDetailsId";
 import { HotelSearchProvider } from "@/components/context/HotelSearch";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -59,6 +58,7 @@ export default function App({ Component, pageProps }) {
                   <HotelCityProvider>
                     <HotelSearchProvider>
                       {header}
+                      <Toaster />
                       <ThemeSwitcher />
                       <Component {...pageProps} />
                       <BackgroundBeamsWithCollisionDemo />

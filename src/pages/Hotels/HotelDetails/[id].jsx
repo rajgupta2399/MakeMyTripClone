@@ -14,6 +14,8 @@ import { HotelSearchContext } from "@/components/context/HotelSearch";
 import { addhotelRoom } from "@/store/hotelRoomSlice";
 import HotelRates from "./hotelRates";
 import store from "@/store/store";
+import { addhotelWatchlist } from "@/store/hotelWatchlistSlice";
+import toast from "react-hot-toast";
 
 const HotelDetails = () => {
   useHotelDetails();
@@ -53,7 +55,8 @@ const HotelDetails = () => {
   const dispatch = useDispatch();
 
   const handleWishlist = (item) => {
-    // dispatch(addToWishList(item));
+    dispatch(addhotelWatchlist(item));
+    toast.success("Hotel Added To Wishlist")
     // toast.success("Hotel Added To Wishlist");
   };
 
