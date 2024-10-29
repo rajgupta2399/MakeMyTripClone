@@ -127,7 +127,7 @@ export default function HotelHeader() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12 ml-20">
-          <Popover className="relative">
+          {/* <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-md font-semibold leading-0 ">
               <Link
                 href="/Hotels"
@@ -137,7 +137,7 @@ export default function HotelHeader() {
                 Dashboard
               </Link>
             </PopoverButton>
-          </Popover>
+          </Popover> */}
 
           <Link
             href="/Hotels/Wishlist"
@@ -147,7 +147,7 @@ export default function HotelHeader() {
             WishList
           </Link>
           <Link
-            href="/MyBooking"
+            href="/Hotels/Mybooking"
             className="text-md font-semibold leading-0  hover:text-red-600 transition ease-in-out delay-100 cursor-pointer no-underline	"
           >
             <i class="fa-solid fa-bed px-2 no-underline"></i>

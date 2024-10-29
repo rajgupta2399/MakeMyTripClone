@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { addCheckoutDetails } from "@/store/hotelCheckoutSlice";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 // Define Yup schema for validation
 const schema = yup
@@ -48,24 +49,40 @@ const Checkout = () => {
     resolver: yupResolver(schema),
   });
 
+
+
+  const [filteredRoom, setFilteredRoom] = useState(null);
+
+  // Move the sessionStorage logic inside useEffect
+  useEffect(() => {
+    const storedItem = sessionStorage.getItem("selectedItem");
+    if (storedItem) {
+      try {
+        setFilteredRoom(JSON.parse(storedItem));
+      } catch (error) {
+        console.error("Failed to parse stored item:", error);
+      }
+    }
+  }, []); // Run only once on mount
+
+  useEffect(() => {
+    if (filteredRoom) {
+      // Any additional logic with `filteredRoom` or `hotelDetail` here
+    }
+  }, [filteredRoom, hotelDetail]);
+
   const onSubmit = (data) => {
     dispatch(
       addCheckoutDetails({
         userInfo: data,
         hotelDetail,
-        roomInfo: info?.rates?.[0]?.name || "N/A",
-        totalAmount: info?.offerRetailRate?.amount || "N/A",
+        roomInfo: filteredRoom?.rates?.[0]?.name || "N/A",
+        totalAmount: filteredRoom?.offerRetailRate?.amount || "N/A",
       })
     );
     toast.success("Pre-Booking Successful");
-    router.push("/MyBooking");
+    router.push("/Hotels/Mybooking/");
   };
-
-  useEffect(() => {
-    if (info) {
-      // Any additional logic with `info` or `hotelDetail` here
-    }
-  }, [info, hotelDetail]);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white py-10 my-16">
@@ -112,7 +129,6 @@ const Checkout = () => {
                 </p>
               </div>
             </div>
-            
           </div>
         </div>
 
@@ -125,12 +141,12 @@ const Checkout = () => {
           </p>
           <p className="mb-2">
             <span className="font-semibold text-gray-200">Room: </span>
-            {info?.rates?.[0]?.name || "N/A"}
+            {filteredRoom?.rates?.[0]?.name || "N/A"}
           </p>
           <div className="flex justify-between items-center mb-4">
             <span className="font-semibold text-gray-200">Total Amount:</span>
             <span className="text-green-400 text-lg">
-              ${info?.offerRetailRate?.amount || "N/A"}
+              ${filteredRoom?.offerRetailRate?.amount || "N/A"}
             </span>
           </div>
         </div>

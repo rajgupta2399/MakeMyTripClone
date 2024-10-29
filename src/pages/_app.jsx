@@ -55,6 +55,12 @@ export default function App({ Component, pageProps }) {
     case "/Hotels/Prebooking":
       header = <HotelHeader />;
       break;
+    case "/Hotels/Checkout":
+      header = <HotelHeader />;
+      break;
+    case "/Hotels/Mybooking":
+      header = <HotelHeader />;
+      break;
     default:
       header = <Header />;
   }
