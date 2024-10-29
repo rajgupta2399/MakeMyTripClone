@@ -141,7 +141,7 @@ export default function Footer() {
       >
         Made with ❤️ by {" "}
         <a className="text-reset fw-bold" href="https://rajkumar2499.netlify.app/" target="_blank">
-          RajKumar
+          Rajkumar
         </a>
       </div>
     </MDBFooter>
