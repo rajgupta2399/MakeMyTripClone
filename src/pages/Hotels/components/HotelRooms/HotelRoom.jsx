@@ -5,9 +5,11 @@ import { HotelDetailsId } from "@/components/context/HotelDetailsId";
 import { HotelSearchContext } from "@/components/context/HotelSearch";
 import Link from "next/link";
 import { SkeletonCard } from "../HotelCarousel/SkeletonCard";
+import { useRouter } from "next/router";
 
 const HotelRoom = ({ strongTagText, options, formattedDates, item }) => {
   const { hotelId, setHotelId } = useContext(HotelDetailsId);
+  const router = useRouter();
   const {
     checkInDate,
     setCheckInDate,
@@ -28,7 +30,10 @@ const HotelRoom = ({ strongTagText, options, formattedDates, item }) => {
 
   const hotelDetail = useSelector((store) => store.hotelDetail.hotelDetail);
   const handleClick = (item) => {
-    // navigate("/PreBookHotelRoom", { state: { item } });
+    router.push({
+      pathname: "/Hotels/Prebooking",
+      query: { item: JSON.stringify(item) }, // Convert object to string if necessary
+    });
   };
 
   return (
