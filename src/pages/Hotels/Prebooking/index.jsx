@@ -4,25 +4,24 @@ import { useRouter } from "next/router"; // Import useRouter for Next.js
 import PreBookHotelRoomCard from "./PreBookHotelRoomCard";
 
 const PreBookHotelRoom = () => {
-  const router = useRouter();
-  const { item: itemQuery } = router.query;
   const hotelRoom = useSelector((store) => store.hotelRoom.hotelRoom);
 
-  // Parse the item from the query parameter
   const [item, setItem] = useState(null);
   const [matchedRoom, setMatchedRoom] = useState(null);
 
+  // Retrieve item from sessionStorage when the component mounts
   useEffect(() => {
-    if (itemQuery) {
+    const storedItem = sessionStorage.getItem("selectedItem");
+    if (storedItem) {
       try {
-        setItem(JSON.parse(itemQuery));
+        setItem(JSON.parse(storedItem));
       } catch (error) {
-        console.error("Failed to parse item:", error);
+        console.error("Failed to parse stored item:", error);
+        setItem(null); // Reset item on error
       }
     }
-  }, [itemQuery]);
+  }, []);
 
-  // Extract roomName words only when item is available
   const roomNameWords = item?.roomName?.toLowerCase().split(" ");
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const PreBookHotelRoom = () => {
           roomType?.rates?.[0]?.name?.toLowerCase().includes(word)
         )
       );
-      setMatchedRoom(foundRoom);
+      setMatchedRoom(foundRoom || null);
     }
   }, [hotelRoom, roomNameWords]);
 

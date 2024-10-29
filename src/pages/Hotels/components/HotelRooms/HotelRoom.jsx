@@ -30,10 +30,9 @@ const HotelRoom = ({ strongTagText, options, formattedDates, item }) => {
 
   const hotelDetail = useSelector((store) => store.hotelDetail.hotelDetail);
   const handleClick = (item) => {
-    router.push({
-      pathname: "/Hotels/Prebooking",
-      query: { item: JSON.stringify(item) }, // Convert object to string if necessary
-    });
+    sessionStorage.setItem("selectedItem", JSON.stringify(item));
+    // Navigate to the route
+    router.push("/Hotels/Prebooking");
   };
 
   return (

@@ -6,10 +6,10 @@ const PreBookHotelRoomCard = ({ filteredRoom, item }) => {
   const router = useRouter();
 
   const handleClick = (filteredRoom) => {
-    // router.push({
-    //   pathname: "/Hotels/Checkout",
-    //   query: { item: JSON.stringify(filteredRoom) },
-    // });
+    // Store filteredRoom in sessionStorage
+    sessionStorage.setItem("selectedItem", JSON.stringify(filteredRoom));
+    // Navigate to the route
+    router.push("/Hotels/Checkout/");
   };
 
   return (
@@ -50,7 +50,7 @@ const PreBookHotelRoomCard = ({ filteredRoom, item }) => {
         <div className="mt-4 text-center">
           <button
             className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300"
-            onClick={handleClick(filteredRoom)}
+            onClick={() => handleClick(filteredRoom)} // Wrap it in an anonymous function
           >
             Pre-Book Now
           </button>
