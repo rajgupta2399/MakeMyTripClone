@@ -26,3 +26,13 @@ This is a clone of the **MakeMyTrip** app built using the **Next.js** framework.
 - 💡 [MDBootstrap UI](https://mdbootstrap.com/docs/react//)
 
 ### 🏨 **Hotel Search & Hotel Pre-Booking**
+
+This Hotel Booking web application allows users to effortlessly search and pre-book hotel rooms based on their preferences. Built using React and Redux for state management, the app provides a smooth and interactive user experience.
+
+#### 🌍 Features
+
+- 🔍 Search Hotels: Users can set check-in and check-out dates, select a country and city, and specify the number of occupants.
+- 🏨 View Available Hotels: Discover hotels tailored to the selected criteria, complete with detailed information.
+- 🛏️ Pre-Book Rooms: Easily reserve rooms in advance to ensure your stay is secured.
+- 💖 Wishlist Functionality: Save favorite hotels for future reference with the wishlist feature.
+- 📋 View Pre-Booked Rooms & Wishlist: Access all pre-booked rooms and saved hotels in the wishlist section.
