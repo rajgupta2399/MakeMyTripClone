@@ -36,3 +36,6 @@ This Hotel Booking web application allows users to effortlessly search and pre-b
 - 🛏️ Pre-Book Rooms: Easily reserve rooms in advance to ensure your stay is secured.
 - 💖 Wishlist Functionality: Save favorite hotels for future reference with the wishlist feature.
 - 📋 View Pre-Booked Rooms & Wishlist: Access all pre-booked rooms and saved hotels in the wishlist section.
+
+### ✈️ **Flight Search**
+- Now it's time to add flight search in our MMT app.
