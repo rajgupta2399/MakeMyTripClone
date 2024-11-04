@@ -27,6 +27,7 @@
     "@react-three/drei": "^9.114.6",
     "@react-three/fiber": "^8.17.10",
     "@tabler/icons-react": "^3.19.0",
+    "amadeus": "^11.0.0",
     "bootstrap": "^5.3.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
