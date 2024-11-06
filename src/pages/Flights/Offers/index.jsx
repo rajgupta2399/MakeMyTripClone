@@ -1,5 +1,12 @@
-// pages/flights.js
 import { useEffect, useState } from "react";
+
+// Mapping carrier codes to airline names
+const airlineNames = {
+  EY: "Etihad Airways", // Abu Dhabi's primary carrier
+  AI: "Air India",
+  BA: "British Airways",
+  // Add more codes as needed
+};
 
 export default function Flights() {
   const [flightOffers, setFlightOffers] = useState([]);
@@ -25,7 +32,7 @@ export default function Flights() {
   }, []);
 
   return (
-    <div>
+    <div className="mt-24">
       <h1>Flight Offers</h1>
       {loading ? (
         <p>Loading...</p>
@@ -43,6 +50,12 @@ export default function Flights() {
                 Arrival: {offer.itineraries[0].segments[0].arrival.iataCode}
               </p>
               <p>Duration: {offer.itineraries[0].duration}</p>
+              {/* Get the carrier code and display the airline name if available */}
+              <p>
+                Airline:{" "}
+                {airlineNames[offer.itineraries[0].segments[0].carrierCode] ||
+                  offer.itineraries[0].segments[0].carrierCode}
+              </p>
             </li>
           ))}
         </ul>
