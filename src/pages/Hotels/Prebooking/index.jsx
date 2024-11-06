@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useRouter } from "next/router"; // Import useRouter for Next.js
 import PreBookHotelRoomCard from "./PreBookHotelRoomCard";
 
 const PreBookHotelRoom = () => {
   const hotelRoom = useSelector((store) => store.hotelRoom.hotelRoom);
-
   const [item, setItem] = useState(null);
   const [matchedRoom, setMatchedRoom] = useState(null);
 
@@ -34,6 +32,8 @@ const PreBookHotelRoom = () => {
       setMatchedRoom(foundRoom || null);
     }
   }, [hotelRoom, roomNameWords]);
+
+  const availableRooms = hotelRoom && hotelRoom[0]?.roomTypes.length > 0;
 
   return (
     <div>
@@ -70,8 +70,8 @@ const PreBookHotelRoom = () => {
         </div>
       )}
 
-      <div className="hotelRoomsdiv">
-        {hotelRoom && hotelRoom[0]?.roomTypes.length > 0 ? (
+      {availableRooms ? (
+        <div className="hotelRoomsdiv">
           <div className="rooms px-10 sm:px-20 md:px-24 lg:px-24 flex flex-wrap gap-5 justify-center mb-5">
             {/* Use a Set to get unique room names */}
             {Array.from(
@@ -102,8 +102,15 @@ const PreBookHotelRoom = () => {
               );
             })}
           </div>
-        ) : null}
-      </div>
+        </div>
+      ) : (
+        // Display "No rooms available" message when no rooms are available
+        <div className="text-center my-10">
+          <h5 className="text-red-500 text-lg font-bold my-5">
+            No rooms available.
+          </h5>
+        </div>
+      )}
     </div>
   );
 };

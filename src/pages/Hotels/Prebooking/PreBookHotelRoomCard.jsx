@@ -12,6 +12,14 @@ const PreBookHotelRoomCard = ({ filteredRoom, item }) => {
     router.push("/Hotels/Checkout/");
   };
 
+  if (!filteredRoom || !filteredRoom.rates || filteredRoom.rates.length === 0) {
+    return (
+      <div className="flex justify-center">
+        <p className="text-white text-lg">No rooms available</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex justify-center">
       <div className="border-2 border-gray-700 p-4 rounded-lg bg-[#1D232A] mb-4 shadow-lg w-full max-w-[499px] h-[390px]">
