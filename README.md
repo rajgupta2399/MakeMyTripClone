@@ -42,3 +42,4 @@ This Hotel Booking web application allows users to effortlessly search and pre-b
 - Flight Offer Search Api Integration.
 - Best Flight Price Api Integration.
 - Flight Pre Booking UI.
+- One Way Flight Search Api Integration.
