@@ -16,7 +16,7 @@ export default function Flights() {
     async function fetchFlightOffers() {
       try {
         const response = await fetch(
-          `/api/getFlightOffers?origin=DEL&destination=LON&departureDate=2024-11-19&adults=2`
+          `/api/getFlightOffers?origin=DEL&destination=BOM&departureDate=2024-11-25&adults=2`
         );
         const data = await response.json();
         setFlightOffers(data);
