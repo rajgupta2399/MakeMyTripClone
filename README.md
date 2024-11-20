@@ -39,3 +39,10 @@ This Hotel Booking web application allows users to effortlessly search and pre-b
 
 ### ✈️ **Flight Search**
 - Now it's time to add flight search in our MMT app.
+- Flight Offer Search Api Integration.
+- Best Flight Price Api Integration.
+- Flight Pre Booking UI.
+- One Way Flight Search Api Integration.
+- Two Way Flight Search Api Integration.
+- Adding Filters.
+- Adding Two way Flight Search Filters.
