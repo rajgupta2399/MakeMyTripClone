@@ -19,7 +19,7 @@ export function TabsDemo() {
       title: (
         <Image
           src={PlaneImage}
-          className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+          className=" sm:w-[28px] sm:h-[28px] w-[120px] "
           alt="PlaneImage"
         ></Image>
       ),
@@ -93,7 +93,7 @@ export function TabsDemo() {
   ];
 
   return (
-    <div className="sm:h-[20rem] md:h-[20rem] [perspective:1000px] relative b flex flex-col justify-center items-center align-middle max-w-5xl mx-auto w-full mb-0 -mt-14">
+    <div className="sm:h-[20rem] md:h-[20rem] [perspective:1000px] relative b flex flex-col justify-center items-center align-middle max-w-5xl mx-auto w-full -mt-14 sm:mb-10">
       <Tabs tabs={tabs} />
     </div>
   );
