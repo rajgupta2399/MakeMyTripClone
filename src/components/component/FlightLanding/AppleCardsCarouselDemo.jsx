@@ -20,7 +20,10 @@ const DummyContent = () => {
     <>
       {[...new Array(3).fill(1)].map((_, index) => {
         return (
-          <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4 ">
+          <div
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4 "
+            key={index}
+          >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
                 The first rule of Apple club is that you boast about Apple club.
@@ -107,20 +110,26 @@ const DummyContent3 = ({ components }) => {
 const components = [
   {
     title: "Introducing MakeMyTRP",
-    content: "Your one-stop travel companion designed to simplify your journey planning. With our user-friendly interface, you can effortlessly book flights, hotel rooms, homestays, and railway tickets all in one place.",
-    imageSrc: "https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&auto=format&fit=crop&q=60",
+    content:
+      "Your one-stop travel companion designed to simplify your journey planning. With our user-friendly interface, you can effortlessly book flights, hotel rooms, homestays, and railway tickets all in one place.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&auto=format&fit=crop&q=60",
   },
   {
     title: "Plan Your Perfect Getaway",
-    content: "Whether you're planning a weekend trip or an extended vacation, we help you find the best options that fit your needs.",
-    imageSrc: "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHJhdmVsfGVufDB8fDB8fHww",
+    content:
+      "Whether you're planning a weekend trip or an extended vacation, we help you find the best options that fit your needs.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHJhdmVsfGVufDB8fDB8fHww",
   },
   {
     title: "Explore New Destinations",
-    content: "Discover hidden gems and popular attractions around the globe. Your adventure awaits!",
-    imageSrc: "https://images.unsplash.com/photo-1707343848552-893e05dba6ac?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fHww",
+    content:
+      "Discover hidden gems and popular attractions around the globe. Your adventure awaits!",
+    imageSrc:
+      "https://images.unsplash.com/photo-1707343848552-893e05dba6ac?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fHww",
   },
-]
+];
 
 const data = [
   {

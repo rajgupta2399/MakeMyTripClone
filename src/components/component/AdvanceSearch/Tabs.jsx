@@ -20,6 +20,7 @@ export function TabsDemo() {
         <Image
           src={PlaneImage}
           className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+          alt="PlaneImage"
         ></Image>
       ),
       value: "Flights",
@@ -34,6 +35,7 @@ export function TabsDemo() {
         <Image
           src={HotelImage}
           className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+          alt="HotelImage"
         ></Image>
       ),
       value: "services",
@@ -48,6 +50,7 @@ export function TabsDemo() {
         <Image
           src={HomeImage}
           className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+          alt="HomeImage"
         ></Image>
       ),
       value: "playground",
@@ -62,6 +65,7 @@ export function TabsDemo() {
         <Image
           src={BeachImage}
           className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+          alt="BeachImage"
         ></Image>
       ),
       value: "content",
@@ -76,6 +80,7 @@ export function TabsDemo() {
         <Image
           src={TrainImage}
           className=" sm:w-[28px] sm:h-[28px] w-[120px]"
+          alt="TrainImage"
         ></Image>
       ),
       value: "random",
