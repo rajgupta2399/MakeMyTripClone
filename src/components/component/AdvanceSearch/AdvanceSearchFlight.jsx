@@ -11,6 +11,7 @@ import { Adults } from "../Dates/Adults";
 import { Children } from "../Dates/Children";
 // import Airports from "../Dates/Airports";
 import { Airports } from "../Dates/Airports";
+import { DestinationAirports } from "../Dates/DestinationAirport";
 
 const AdvanceSearchFlight = () => {
   const { theme } = useTheme();
@@ -112,7 +113,7 @@ const AdvanceSearchFlight = () => {
             >
               Airport
             </label>
-            <Airports/>
+            <DestinationAirports />
           </div>
         </div>
       </div>

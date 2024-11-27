@@ -18,11 +18,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { options } from "@/lib/constants";
-import { DepartureAirportContext } from "@/components/context/DepartureAirportContext";
+import { ArrivalAirportContext } from "@/components/context/ArrivalAirportContex";
 
-export function Airports() {
-  const { departureAirportData, setDepartureAirportData } = useContext(
-    DepartureAirportContext
+export function DestinationAirports() {
+  const { arrivalAirportData, setArrivalAirportData } = useContext(
+    ArrivalAirportContext
   );
   const [open, setOpen] = useState(false);
   const [iataCodes, setIataCodes] = useState([]);
@@ -48,11 +48,11 @@ export function Airports() {
 
   const handleSelect = (code) => {
     setSelectedCode(code); // Set the selected IATA code
-    setDepartureAirportData(code);
     setOpen(false); // Close the popover
+    setArrivalAirportData(code);
   };
 
-  // console.log(departureAirportData.code);
+  // console.log(arrivalAirportData.code);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

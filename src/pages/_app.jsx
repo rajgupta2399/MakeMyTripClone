@@ -17,6 +17,8 @@ import { HotelDetailsIdProvider } from "@/components/context/HotelDetailsId";
 import { HotelSearchProvider } from "@/components/context/HotelSearch";
 import { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
+import { DepartureAirportProvider } from "@/components/context/DepartureAirportContext";
+import { ArrivalAirportProvider } from "@/components/context/ArrivalAirportContex";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -75,19 +77,23 @@ export default function App({ Component, pageProps }) {
         <ToastProvider>
           <ThemeProvide>
             <Provider store={store}>
-              <CountryProvider>
-                <HotelDetailsIdProvider>
-                  <HotelCityProvider>
-                    <HotelSearchProvider>
-                      {header}
-                      <Toaster />
-                      <ThemeSwitcher />
-                      <Component {...pageProps} />
-                      <BackgroundBeamsWithCollisionDemo />
-                    </HotelSearchProvider>
-                  </HotelCityProvider>
-                </HotelDetailsIdProvider>
-              </CountryProvider>
+              <DepartureAirportProvider>
+                <ArrivalAirportProvider>
+                  <CountryProvider>
+                    <HotelDetailsIdProvider>
+                      <HotelCityProvider>
+                        <HotelSearchProvider>
+                          {header}
+                          <Toaster />
+                          <ThemeSwitcher />
+                          <Component {...pageProps} />
+                          <BackgroundBeamsWithCollisionDemo />
+                        </HotelSearchProvider>
+                      </HotelCityProvider>
+                    </HotelDetailsIdProvider>
+                  </CountryProvider>
+                </ArrivalAirportProvider>
+              </DepartureAirportProvider>
             </Provider>
           </ThemeProvide>
         </ToastProvider>
