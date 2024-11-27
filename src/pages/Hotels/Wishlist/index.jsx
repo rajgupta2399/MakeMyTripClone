@@ -2,6 +2,7 @@ import React from "react";
 import Rating from "@mui/material/Rating";
 import { useSelector } from "react-redux";
 import store from "@/store/store";
+import Image from "next/image";
 
 const WishList = () => {
   const hotelWatchlist = useSelector(
@@ -25,7 +26,7 @@ const WishList = () => {
               <div className="flex flex-col lg:flex-row gap-4">
                 {/* Hotel Image */}
                 <div className="flex-shrink-0 w-full lg:w-1/3">
-                  <img
+                  <Image
                     src={
                       hotel?.main_photo
                         ? hotel?.main_photo
@@ -33,6 +34,9 @@ const WishList = () => {
                     }
                     alt={hotel?.name}
                     className="object-cover rounded-md w-full h-[200px] sm:h-[260px]"
+                    height={200}
+                    width={200}
+                    unoptimized
                   />
                 </div>
 

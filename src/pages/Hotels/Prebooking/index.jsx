@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import PreBookHotelRoomCard from "./PreBookHotelRoomCard";
+import Image from "next/image";
 
 const PreBookHotelRoom = () => {
   const hotelRoom = useSelector((store) => store.hotelRoom.hotelRoom);
@@ -48,7 +49,7 @@ const PreBookHotelRoom = () => {
               {item?.photos?.[0]?.url ||
               item?.photos?.[1]?.url ||
               item?.photos?.[2]?.url ? (
-                <img
+                <Image
                   src={
                     item?.photos?.[0]?.url ||
                     item?.photos?.[1]?.url ||
@@ -56,6 +57,9 @@ const PreBookHotelRoom = () => {
                   }
                   alt="Hotel Room"
                   className="mx-auto w-[90%] h-[200px] md:h-[250px] object-cover rounded-lg"
+                  height={200}
+                  width={200}
+                  unoptimized
                 />
               ) : null}
             </div>
