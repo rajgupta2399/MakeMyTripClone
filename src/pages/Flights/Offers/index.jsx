@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { ArrivalAirportContext } from "@/components/context/ArrivalAirportContex";
+import { DepartureAirportContext } from "@/components/context/DepartureAirportContext";
+import { useContext, useEffect, useState } from "react";
 
 // Mapping carrier codes to airline names
 const airlineNames = {
@@ -9,6 +11,8 @@ const airlineNames = {
 };
 
 export default function Flights() {
+  const { departureAirportData } = useContext(DepartureAirportContext);
+  const { arrivalAirportData } = useContext(ArrivalAirportContext);
   const [flightOffers, setFlightOffers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,11 +20,10 @@ export default function Flights() {
     async function fetchFlightOffers() {
       try {
         const response = await fetch(
-          `/api/getFlightOffers?origin=DEL&destination=BOM&departureDate=2024-11-25&adults=2`
+          `/api/getFlightOffers?origin=${departureAirportData.code}&destination=${arrivalAirportData.code}&departureDate=2024-11-28&adults=2`
         );
         const data = await response.json();
         setFlightOffers(data);
-        console.log(flightOffers);
       } catch (error) {
         console.error("Error fetching flight offers:", error);
       } finally {
@@ -29,7 +32,12 @@ export default function Flights() {
     }
 
     fetchFlightOffers();
-  }, []);
+  }, [departureAirportData, arrivalAirportData]);
+
+  console.log(flightOffers);
+  console.log(departureAirportData);
+  console.log(arrivalAirportData);
+  
 
   return (
     <div className="mt-24">
@@ -38,7 +46,7 @@ export default function Flights() {
         <p>Loading...</p>
       ) : (
         <ul>
-          {flightOffers.map((offer, index) => (
+          {flightOffers?.map((offer, index) => (
             <li key={index}>
               <p>
                 Price: {offer.price.total} {offer.price.currency}
